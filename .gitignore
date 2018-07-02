@@ -2,5 +2,6 @@ node_modules
 sass-cache
 .DS_Store
 package-lock.json
-public
-.vscode
+public/*
+.vscode/
+settings.jso
