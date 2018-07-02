@@ -4,6 +4,4 @@
 
 const requireDir = require('require-dir');
 
-requireDir('./gulp', {
-  recurse: true
-});
+requireDir('./gulp', {recurse: true});

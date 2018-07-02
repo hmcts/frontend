@@ -1,1 +1,27 @@
-<div class="hmcts-timeline">Hello World</div>
+<div class="hmcts-timeline{% if params.classes %} {{ params.classes }}{% endif %}">
+
+  {% for event in params.events %}
+  <div class="hmcts-timeline__item">
+
+    <div class="hmcts-timeline__header">
+      {%- if params.isPageSpecific %}
+      <h2 class="hmcts-timeline__title">{{event.title}}</h2>
+      {% else %}
+      <h3 class="hmcts-timeline__title">{{event.title}}</h3>
+      {% endif %}
+      {% if event.by %}
+        <p class="hmcts-timeline__by">by {{event.by}}</p>
+      {% endif %}
+    </div>
+        
+    <p class="hmcts-timeline__date"><time datetime="{{event.date | date('YYYY-MM-DDTHH:mm')}}">{{event.date | hmctsDate }} at {{event.date | hmctsTime }}</time></p>
+
+    <!--ul class="hmcts-timeline__documents">
+      <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#">Decision notice</a></li>
+      <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#">Application for decree nisi</a></li>
+    </ul-->
+
+  </div>
+  {% endfor %}
+
+</div>
