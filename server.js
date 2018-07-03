@@ -6,7 +6,8 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 
 // Local dependencies
-const routes = require('./app/routes.js');
+const routes = require('./app/routes');
+const autoRoutes = require('./app/routes/auto');
 const app = express();
 
 
@@ -44,9 +45,8 @@ app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'assets')));
 
-
-app.use('/', routes);
-
+app.use(routes);
+app.use(autoRoutes); // must be the last one
 
 // Start app
 app.listen('3000', function(err) {
