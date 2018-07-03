@@ -1,27 +1,11 @@
-{% extends "./layouts/layout.html" %}
+{% extends "layouts/layout.html" %}
 
 {% block content %}
 
 <h1 class="govuk-heading-l">HMCTS Frontend</h1>
 
-{{hmctsTimeline({
-  events: [
-    {
-      "title": 'Response submitted',
-      'by': 'DWP Appeals Officer',
-      "date": '2018-01-25T14:04'
-    },
-    {
-      "title": 'Appeal marked as compliant',
-      'by': 'DJ DeVere',
-      "date": '2017-12-05T09:10'
-    },
-    {
-      "title": 'Interlocutory referral to DJ DeVere',
-      'by': 'DLC Admin',
-      "date": '2017-11-20T14:27'
-    }
-  ]
-}) }}
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="/timeline">Timeline</a></li>
+</ul>
 
 {% endblock %}
