@@ -1,4 +1,3 @@
-// Copies image folder to public
 const gulp = require('gulp');
 
 gulp.task('copy-assets', function() {
