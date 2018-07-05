@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-gulp.task('default', function(done) {
+gulp.task('default', (done) => {
   runSequence(
     'generate-assets',
     'watch',
@@ -9,7 +9,7 @@ gulp.task('default', function(done) {
   );
 });
 
-gulp.task('generate-assets', function(done) {
+gulp.task('generate-assets', (done) => {
   runSequence(
     'clean',
     'copy-assets',
@@ -17,18 +17,16 @@ gulp.task('generate-assets', function(done) {
   );
 });
 
-gulp.task('watch', function(done) {
+gulp.task('watch', (done) => {
   runSequence(
     'watch-sass', done
   );
 });
 
-gulp.task('build:package', done => {
+gulp.task('build:package', (done) => {
   runSequence(
     'build:clean',
     'build:copy-files',
-    // 'js:compile',
-    // 'generate:readme',
     done
   );
 });

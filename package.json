@@ -11,14 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/hmcts/hmcts-frontend.git"
   },
-  "author": "",
+  "author": "Trevor Saint",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hmcts/hmcts-frontend/issues"
   },
   "homepage": "https://github.com/hmcts/hmcts-frontend#readme",
   "dependencies": {
-    "del": "^3.0.0",
     "express": "^4.16.3",
     "govuk-frontend": "^1.0.0",
     "gulp": "^3.9.1",
