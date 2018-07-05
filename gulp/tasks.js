@@ -4,7 +4,7 @@ const runSequence = require('run-sequence');
 gulp.task('default', function(done) {
   runSequence(
     'generate-assets',
-    'watch', 
+    'watch',
     'server', done
   );
 });
@@ -20,5 +20,15 @@ gulp.task('generate-assets', function(done) {
 gulp.task('watch', function(done) {
   runSequence(
     'watch-sass', done
+  );
+});
+
+gulp.task('build:package', done => {
+  runSequence(
+    'build:clean',
+    'build:copy-files',
+    // 'js:compile',
+    // 'generate:readme',
+    done
   );
 });

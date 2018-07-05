@@ -1,10 +1,11 @@
 {
   "name": "hmcts-frontend",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha",
   "description": "HMCTS Frontend",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build:package": "gulp build:package"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/hmcts/hmcts-frontend#readme",
   "dependencies": {
+    "del": "^3.0.0",
     "express": "^4.16.3",
     "govuk-frontend": "^1.0.0",
     "gulp": "^3.9.1",

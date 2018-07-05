@@ -1,0 +1,29 @@
+{
+  "name": "hmcts-frontend",
+  "description": "HMCTS Frontend contains the code you need to start building a user interface for HMCTS.",
+  "version": "0.0.1-alpha",
+  "main": "all.js",
+  "sass": "all.scss",
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "author": {
+    "name": "HMCTS Design System Team",
+    "email": "adam.silver@hmcts.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hmcts/hmcts-frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hmcts/hmcts-frontend/issues"
+  },
+  "homepage": "https://github.com/hmcts/hmcts-frontend#readme",
+  "keywords": [
+    "hmcts",
+    "frontend",
+    "design system",
+    "template"
+  ],
+  "license": "MIT"
+}
