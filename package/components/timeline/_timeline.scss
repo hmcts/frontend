@@ -1,0 +1,86 @@
+/* ==========================================================================
+   #TIMELINE
+   ========================================================================== */
+
+   .hmcts-timeline {
+    margin-bottom: govuk-spacing(4);
+    position: relative;
+  
+    &:before {
+      background-color: govuk-colour("blue");
+      content: "";
+      height: calc(100% - 10px);
+      left: 0;
+      position: absolute;
+      top: govuk-spacing(2);
+      width: 5px;
+    }
+  
+  }
+  
+
+  .hmcts-timeline--full {
+    margin-bottom: 0;
+    &:before {
+      height: calc(100% - 75px);
+    }
+  }
+  
+  
+  .hmcts-timeline__item {
+    padding-bottom: govuk-spacing(6);
+    padding-left: govuk-spacing(4);
+    position: relative;
+  
+    &:before {
+      background-color: govuk-colour("blue");
+      content: "";
+      height: 5px;
+      left: 0;
+      position: absolute;
+      top: govuk-spacing(2);
+      width: 15px;
+    }
+  
+  }
+  
+  
+  .hmcts-timeline__title {
+    @include govuk-font($size: 19, $weight: bold);
+    display: inline;
+  }
+  
+  
+  .hmcts-timeline__by {
+    @include govuk-font($size: 19);
+    color: $govuk-secondary-text-colour;
+    display: inline;
+    margin: 0;
+  }
+  
+  
+  .hmcts-timeline__date {
+    @include govuk-font($size: 16);
+    margin-top: govuk-spacing(1);
+    margin-bottom: 0;
+  }
+  
+  
+  .hmcts-timeline__documents {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  
+  .hmcts-timeline__document-item {
+    margin-bottom: govuk-spacing(1);
+  }
+  
+  
+  .hmcts-timeline__document-link {
+    background-image: url(#{$hmcts-images-path}icon-document.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 16px;
+    background-position: 0 50%;
+    padding-left: govuk-spacing(5);
+  }
