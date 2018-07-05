@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "build:package": "gulp build:package"
+    "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
+    "release": "node bin/check-nvmrc.js && ./bin/release.sh",
+    "build:package": "node bin/check-nvmrc.js && gulp build:package"
   },
   "repository": {
     "type": "git",
