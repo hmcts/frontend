@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
 
   return gulp.src('app/assets/sass/*.scss')
     .pipe(sass({

@@ -11,7 +11,6 @@ if [ $(git tag -l "$TAG") ]; then
     echo "⚠️ Git tag already exists."
     exit 1;
 else
-    echo "Push to a release branch"
     git add .
     git commit -m "Release $TAG"
     #set upstream so that we can push the branch up
