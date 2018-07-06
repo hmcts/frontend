@@ -8,7 +8,7 @@ set -e
 
 NPM_USER=$(npm whoami);
 
-if ! [ "govuk-patterns-and-toolsXXXXX" == "$NPM_USER" ]; then
+if ! [ "adamsilver" == "$NPM_USER" ]; then
   echo "⚠️ FAILURE: You are not logged in with the correct user."
   exit 1
 fi
@@ -30,7 +30,7 @@ if [ $(git tag -l "$TAG") ]; then
     exit 1
 else
     echo "🗒 Tagging repo using tag version: $TAG ..."
-    git tag $TAG -m "GOV.UK Frontend release $TAG"
+    git tag $TAG -m "HMCTS Frontend release $TAG"
     git push --tags
     echo "🗒 Tag $TAG created and pushed to remote."
 
