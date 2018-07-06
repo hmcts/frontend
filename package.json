@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hmcts/hmcts-frontend.git"
+    "url": "git+https://github.com/hmcts/frontend.git"
   },
-  "author": "Trevor Saint",
+  "author": "Trevor Saint, Adam Silver",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hmcts/hmcts-frontend/issues"
+    "url": "https://github.com/hmcts/frontend/issues"
   },
-  "homepage": "https://github.com/hmcts/hmcts-frontend#readme",
+  "homepage": "https://github.com/hmcts/frontend#readme",
   "dependencies": {
     "express": "^4.16.3",
     "govuk-frontend": "^1.0.0",
