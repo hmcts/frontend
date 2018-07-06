@@ -24,25 +24,25 @@ This should be incremented based on [Semantic versioning](https://semver.org/) f
 
 This will:
   - copy files from `src/` to `package/` and run tests
-  - add [vendor prefixes](https://github.com/postcss/autoprefixer) to CSS in `package/`
-  - build "govuk-frontend" Sass and JavaScript files into `dist/`
+  - (NOT YET) add [vendor prefixes](https://github.com/postcss/autoprefixer) to CSS in `package/`
+  - (NOT YET) build "frontend" Sass and JavaScript files into `dist/`
   - commit all changes and push the branch to remote
 
-9. (Optional) Test in [GOV.UK Design System](git@github.com:alphagov/govuk-design-system.git)
+9. (Optional) Test in [HMCTSDesign System](git@github.com:hmcts/design-system.git)
 
-  If you want to test your changes work correctly when used in the GOV.UK Design System you can use [npm link](https://docs.npmjs.com/cli/link) to test before publishing.
+  If you want to test your changes work correctly when used in the HMCTS Design System you can use [npm link](https://docs.npmjs.com/cli/link) to test before publishing.
 
   ```bash
-  cd ../govuk-design-system
+  cd ../hmcts-design-system
   git checkout master
   npm install # note running `npm install` after `npm link` will destroy the link.
-  npm link ../govuk-frontend/package/
+  npm link ../@hmcts/frontend/package/
   ```
 
   When you have finished you need to unlink the package
 
   ```bash
-  npm unlink ../govuk-frontend/package/
+  npm unlink ../@hmcts/frontend/package/
   ```
 
 10. Create a pull request and copy the changelog text.
@@ -52,7 +52,7 @@ This will:
 
 12. Checkout **master** and pull the latest changes.
 
-13. Log into npm, using team [credentials](https://github.com/alphagov/design-system-team-credentials/tree/master/npm/govuk-patterns-and-tools).
+13. Log into npm.
 
 14. Run `npm run release`.
 
@@ -61,11 +61,11 @@ This will:
   - publish the package has not been published yet
   - create a new tag if the current git tag does not match the latest published tag
   - push the tag to remote origin
-  - create a zip file of the `dist` directory
+  - (NOT YET) create a zip file of the `dist` directory
 
-15. Create a release in the [Github interface](https://github.com/alphagov/govuk-frontend/releases/new)
+15. Create a release in the [Github interface](https://github.com/hmcts/frontend/releases/new)
   - select the latest tag version
-  - set "GOV.UK Frontend release v[version-number]" as the title
+  - set "HMCTS Frontend release v[version-number]" as the title
   - add release notes from changelog
   - add a summary of highlights (this will be used when sending comms out)
   - attach the generated ZIP that has been generated at the root of the project
@@ -76,8 +76,3 @@ This will:
 ```bash
 npm logout
 ```
-17. Move Trello cards from "Next Frontend release" column to "Done".
-
-18. Add Trello cards to "This Sprint" column for
-  - Update the GOV.UK Design System to use the latest release
-  - Update the GOV.UK Prototype Kit to use the latest release

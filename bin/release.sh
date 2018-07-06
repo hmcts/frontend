@@ -17,7 +17,7 @@ echo "📦  Publishing package..."
 
 # Try publishing
 cd package
-npm publish
+npm publish --access=public
 echo "🗒 Package published!"
 cd ..
 
@@ -34,7 +34,7 @@ else
     git push --tags
     echo "🗒 Tag $TAG created and pushed to remote."
 
-    echo "🗒 Creating a release artifact..."
-    git archive -o ./release-$TAG.zip HEAD:dist
-    echo "🗒 Artifact created. Now create a release on GitHub and attach this."
+    #echo "🗒 Creating a release artifact..."
+    #git archive -o ./release-$TAG.zip HEAD:dist
+    echo "🗒 Now create a release on GitHub."
 fi
