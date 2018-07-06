@@ -1,5 +1,5 @@
 {
-  "name": "hmcts-frontend",
+  "name": "@hmcts/frontend",
   "description": "HMCTS Frontend contains the code you need to start building a user interface for HMCTS.",
   "version": "0.0.1-alpha",
   "main": "all.js",
