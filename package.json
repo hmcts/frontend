@@ -1,5 +1,5 @@
 {
-  "name": "hmcts-frontend",
+  "name": "@hmcts/frontend",
   "version": "0.0.1-alpha",
   "description": "HMCTS Frontend",
   "main": "index.js",
