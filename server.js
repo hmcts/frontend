@@ -29,14 +29,6 @@ var nunjucksApp = nunjucks.configure(appViews, {
   watch: true
 });
 
-
-const filters = require('./src/filters.js')();
-
-Object.keys(filters).forEach(function (filterName) {
-  nunjucksApp.addFilter(filterName, filters[filterName]);
-});
-
-
 // Set view engine
 app.set('view engine', 'html');
 
