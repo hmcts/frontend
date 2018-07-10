@@ -13,6 +13,8 @@ gulp.task('generate-assets', (done) => {
   runSequence(
     'clean',
     'copy-assets',
+    'copy-component-javascript',
+    'copy-vendor-javascript',
     'sass', done
   );
 });
