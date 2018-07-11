@@ -29,6 +29,7 @@ gulp.task('build:package', (done) => {
   runSequence(
     'build:clean',
     'build:copy-files',
+    // 'build:compile-javascript'
     done
   );
 });
