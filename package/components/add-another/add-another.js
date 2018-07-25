@@ -1,4 +1,3 @@
-var HMCTSFrontend = {};
 HMCTSFrontend.AddAnother = function(container) {
 	this.container = $(container);
 	this.container.on('click', '.hmcts-add-another__remove-button', $.proxy(this, 'onRemoveButtonClick'));
