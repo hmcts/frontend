@@ -24,6 +24,7 @@
     "govuk-frontend": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^4.0.1",
     "moment": "^2.22.2",
