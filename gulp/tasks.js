@@ -15,6 +15,7 @@ gulp.task('generate-assets', (done) => {
     'copy-assets',
     'copy-component-javascript',
     'copy-vendor-javascript',
+    'copy-namespace',
     'sass', done
   );
 });
@@ -29,7 +30,7 @@ gulp.task('build:package', (done) => {
   runSequence(
     'build:clean',
     'build:copy-files',
-    // 'build:compile-javascript'
+    'build:javascript',
     done
   );
 });

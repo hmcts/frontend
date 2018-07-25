@@ -5,6 +5,8 @@ gulp.task('watch-sass', () => {
     'src/assets/images/**',
     'src/settings/**/*.scss',
     'src/components/**/*.scss',
+    'src/components/**/*.js',
+    'src/namespace.js',
     'app/assets/sass/*.scss'
-  ], ['sass']);
+  ], ['sass', 'copy-component-javascript', 'copy-namespace']);
 });
