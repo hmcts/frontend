@@ -33,6 +33,24 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.3-alpha
+
+🆕 New features:
+
+- Add another (still needs work regarding secondary button styles)
+
+🏠 Internal:
+
+- Now creates all.js and relevant JS for inclusion in other projects
+
+## 0.0.2-alpha
+
+🏠 Internal:
+
+- Now deploys to hmcts-frontend.herokuapp.com
+- Prepared some JS stuff
+- Began add another component
+
 ## 0.0.1-alpha
 
 This is the first release.
