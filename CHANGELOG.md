@@ -33,6 +33,21 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.4-alpha
+
+🆕 New features:
+
+- Secondary button styles
+
+🔧 Fixes:
+
+- Add another remove float styles from legend
+- Add another uses secondary button style
+
+🏠 Internal:
+
+- Remove version from internal package.json
+
 ## 0.0.3-alpha
 
 🆕 New features:
