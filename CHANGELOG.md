@@ -33,6 +33,18 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.5-alpha
+
+🆕 New features:
+
+- Timeline now has documents
+- Frontend now exposes its assets
+
+🔧 Fixes:
+
+- Add another local JavaScript wasn't running
+- No longer copying src/assets into public folder
+
 ## 0.0.4-alpha
 
 🆕 New features:
