@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.6-alpha
+
+🆕 New features:
+
+- Sub navigation component
+
 ## 0.0.5-alpha
 
 🆕 New features:
