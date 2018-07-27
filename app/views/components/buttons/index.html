@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h1 class="govuk-heading-l">Buttons</h1>
+
+
+  <h2 class="govuk-heading-m">Secondary button</h2>
+
+  {{ govukButton({
+    "text": "Secondary button",
+    "classes": "hmcts-button--secondary"
+  }) }}
+
+{% endblock %}
