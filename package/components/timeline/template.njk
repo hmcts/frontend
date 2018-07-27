@@ -1,14 +1,17 @@
+
+{% set headingLevel = 2 %}
+{% if params.headingLevel %}
+{% set headingLevel = params.headingLevel %}
+{% endif %}
+
+
 <div class="hmcts-timeline{% if params.classes %} {{ params.classes }}{% endif %}">
 
   {% for event in params.events %}
   <div class="hmcts-timeline__item">
 
     <div class="hmcts-timeline__header">
-      {%- if params.isPageSpecific %}
-      <h2 class="hmcts-timeline__title">{{event.title}}</h2>
-      {% else %}
-      <h3 class="hmcts-timeline__title">{{event.title}}</h3>
-      {% endif %}
+      <h{{headingLevel}} class="hmcts-timeline__title">{{event.title}}</h{{headingLevel}}>
       {% if event.by %}
         <p class="hmcts-timeline__by">by {{event.by}}</p>
       {% endif %}
@@ -16,10 +19,13 @@
 
     <p class="hmcts-timeline__date"><time datetime="{{event.dateUtc}}">{{event.date}} at {{event.time }}</time></p>
 
-    <ul class="hmcts-timeline__documents">
-      <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#">Decision notice</a></li>
-      <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#">Application for decree nisi</a></li>
-    </ul>
+    {% if event.documents %}
+      <ul class="hmcts-timeline__documents">
+        {% for document in event.documents %}
+          <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="{{document.href}}">{{document.name}}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
 
   </div>
   {% endfor %}
