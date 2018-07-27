@@ -20,9 +20,9 @@ gulp.task('default', () => {
 gulp.task('generate-assets', () => {
   runSequence(
     'clean',
-    'copy-assets',
     'copy-component-javascript',
     'copy-vendor-javascript',
+    'copy-namespace',
     'sass'
   );
 });
