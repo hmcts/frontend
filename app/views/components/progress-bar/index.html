@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Progress bar</h1>
+
+  {{ hmctsProgressBar({
+    items: [{
+      text: 'You apply',
+      complete: true
+    }, {
+      text: 'Your husband/wife responds',
+      current: true
+    }, {
+      text: 'The court decides'
+    }, {
+      text: 'Divorce finalised'
+    }]
+  }) }}
+
+{% endblock %}
