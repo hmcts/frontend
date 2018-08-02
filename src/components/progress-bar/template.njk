@@ -3,7 +3,7 @@
     {% for item in params.items %}
     <li class="hmcts-progress-bar__list-item" {{ 'aria-current=step' if item.current }}>
       <span class="hmcts-progress-bar__icon{{ '  hmcts-progress-bar__icon--complete' if item.complete }}"></span>
-      <span class="hmcts-progress-bar__label">{{item.text}}</span>    
+      <span class="hmcts-progress-bar__label">{{ item.html | safe if item.html else item.text }}</span>    
     </li>
     {% endfor %}
   </ol>
