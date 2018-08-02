@@ -2,6 +2,10 @@
    #PROGRESS BAR
    ========================================================================== */
 
+.hmcts-progress-bar {
+  margin-bottom: govuk-spacing(7);
+}
+
 .hmcts-progress-bar__list {
   font-size: .1px; // Hide white space between elements
   list-style: none;
