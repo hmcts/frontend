@@ -22,6 +22,7 @@
 {%- from "radios/macro.njk" import govukRadios %}
 
 {%- from "timeline/macro.njk" import hmctsTimeline %}
+{%- from "progress-bar/macro.njk" import hmctsProgressBar %}
 {%- from "sub-navigation/macro.njk" import hmctsSubNavigation %}
 
 <!DOCTYPE html>
@@ -45,9 +46,10 @@
     {% block body %}{% endblock %}
 
     {% block scripts %}
-        {% include "includes/scripts.html" %}
-        {% block pageScripts %}{% endblock %}
-      {% endblock %}
+      {% include "includes/scripts.html" %}
+      {% block pageScripts %}{% endblock %}
+    {% endblock %}
 
   </body>
+
 </html>
