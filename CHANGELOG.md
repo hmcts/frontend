@@ -33,6 +33,22 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+
+## 0.0.7-alpha
+
+🆕 New features:
+
+- Progress bar component
+- Style adjustments to sub navigation
+
+🔧 Fixes:
+
+- Added HTML Shiv for IE8 support
+- Fixed button alignment for add another component
+- Fixed secondary button hover style for ie8 due to lack of support for RGBA
+- Updates made to timeline when documents shown
+- Added ie8 fixes for timeline component
+
 ## 0.0.6-alpha
 
 🆕 New features:
