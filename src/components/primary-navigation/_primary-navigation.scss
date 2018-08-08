@@ -36,7 +36,8 @@
     padding-bottom: 12px;
     text-decoration: underline;
 
-    &:link {
+    &:link,
+    &:visited {
       color: govuk-colour("white");
     }
 
