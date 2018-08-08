@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Global header</h1>
+
+  {{ hmctsGlobalHeader({
+    serviceName: 'Judicial case manager',
+    serviceUrl: '#',
+    accountNavigation: [
+      {
+        text: 'Account',
+        href: '/app/dashboard'
+      },
+      {
+        text: 'Sign out',
+        href: '/sign-out'
+      }
+    ]
+  }) }}
+
+{% endblock %}

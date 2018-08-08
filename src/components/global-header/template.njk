@@ -1,0 +1,31 @@
+<header class="hmcts-header{{ params.classes if params.classes }}" role="banner">
+
+  <div class="hmcts-width-container">
+
+    <div class="hmcts-header__service">
+      <a href="{{ params.serviceUrl | default('/') }}">{{ params.serviceName }}</a>
+    </div>
+
+    {% if params.accountNavigation %}
+    <div class="hmcts-header__account">      
+      
+      <nav class="hmcts-account-nav" aria-label="Account navigation">
+        
+        <ul class="hmcts-account-nav__list{{ params.accountNavigationClasses if params.accountNavigationClasses }}">
+          
+          {% for item in params.accountNavigation %}
+            {% if item.href and item.text %}
+              <li class="hmcts-account-nav__item"><a class="hmcts-account-nav__link" href="{{ item.href }}">{{ item.text }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+        </ul>
+
+      </nav>
+
+    </div>
+    {% endif %}
+
+  </div>
+
+</header>

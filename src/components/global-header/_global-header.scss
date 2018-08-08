@@ -1,0 +1,96 @@
+/* ==========================================================================
+   #HEADER
+   ========================================================================== */
+
+   .hmcts-header {
+    @include govuk-clearfix;
+    background-color: govuk-colour(black);
+    padding-top: govuk-spacing(3);
+    padding-bottom: govuk-spacing(3);
+  }
+
+
+  .hmcts-header__service {
+    @include govuk-font($size: 24, $weight: bold);
+    display: block;
+
+    a:link,
+    a:active,
+    a:visited {
+      color: govuk-colour(white);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    // This needs to be extracted as it’s very common
+    a:focus {
+      color: govuk-colour(black);
+    }
+
+  }
+
+
+  @include mq($from: tablet) {
+
+    .hmcts-header__service {
+      float: left;
+    }
+
+    .hmcts-header__account {
+      float: right;
+    }
+
+  }
+
+
+  /* ==========================================================================
+   #ACCOUNT NAVIGATION
+   ========================================================================== */
+
+   .hmcts-account-nav {
+    color: govuk-colour(white);
+    margin-top: govuk-spacing(1);
+  }
+
+
+  .hmcts-account-nav__list {
+    font-size: .1px; // Removes white space when using inline-block on child element.
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .hmcts-account-nav__item {
+    @include govuk-font(16);
+    display: inline-block;
+    margin-right: govuk-spacing(4);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+
+  .hmcts-account-nav__link {
+
+    &:link,
+    &:visited,
+    &:active {
+      color: inherit;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    // This needs to be extracted as it’s very common
+    &:focus {
+      color: govuk-colour(black);
+    }
+
+  }
