@@ -1,0 +1,70 @@
+/* ==========================================================================
+   #PRIMARY NAV
+   ========================================================================== */
+
+   .hmcts-primary-navigation {
+    background-color: govuk-colour("black");
+    margin-bottom: govuk-spacing(7);
+  }
+
+
+  .hmcts-primary-navigation__container {
+    @include govuk-clearfix;
+    position: relative;
+  }
+
+
+  .hmcts-primary-navigation__list {
+    font-size: .1px; // Removes white space when using inline-block on child element.
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .hmcts-primary-navigation__item {
+    @include govuk-font(16);
+    display: inline-block;
+    margin-right: govuk-spacing(4);
+    margin-top: 0;
+  }
+
+
+  .hmcts-primary-navigation__link {
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: underline;
+
+    &:link {
+      color: govuk-colour("white");
+    }
+
+    &:focus {
+      color: govuk-colour("black"); // Focus colour on yellow should really be black.
+      position: relative; // Ensure focus sits above everything else.
+    }
+
+  }
+
+
+  .hmcts-primary-navigation__link[aria-current=page] {
+    color: govuk-colour(white);
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+      background-color: govuk-colour("white");
+      content: "";
+      display: block;
+      position: absolute; bottom: 0; left: 0;
+      height: 5px;
+      width: 100%;
+    }
+
+    &:focus {
+      color: govuk-colour("black"); // Focus colour on yellow should really be black.
+      position: relative; // Ensure focus sits above everything else.
+    }
+
+  }

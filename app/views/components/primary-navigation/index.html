@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Primary navigation</h1>
+
+  {{ hmctsPrimaryNavigation({
+    items: [{
+      text: 'Summary',
+      href: '/',
+      selected: true
+    }, {
+      text: 'Case file',
+      href: '/'
+    }, {
+      text: 'Timeline',
+      href: '/'
+    }]
+  }) }}
+
+{% endblock %}
