@@ -9,7 +9,7 @@
     {% if params.navigation %}
     <div class="hmcts-header__content">      
       
-      <nav class="hmcts-header__navigation" aria-label="{{ params.navigationLabel }}">
+      <nav class="hmcts-header__navigation"{% if (params.navigationLabel) %} aria-label="{{ params.navigationLabel }}" {% endif %}>
         
         <ul class="hmcts-header__navigation-list{{ params.navigationClasses if params.navigationClasses }}">
           
