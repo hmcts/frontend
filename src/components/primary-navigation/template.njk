@@ -1,4 +1,4 @@
-<nav class="hmcts-primary-navigation {{ params.classes }}" aria-label="{{ params.label }}">
+<nav class="hmcts-primary-navigation {{ params.classes }}"{% if (params.label) %} aria-label="{{ params.label }}"{% endif %}>
   <div class="hmcts-primary-navigation__container {{ params.containerClasses }}">
     <ul class="hmcts-primary-navigation__list">
       {% for item in params.items %}
