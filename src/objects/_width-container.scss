@@ -1,9 +1,9 @@
-@mixin hmcts-width-container {
+@mixin hmcts-width-container($width: $hmcts-page-width) {
   // Limit the width of the container to the page width
-  max-width: $hmcts-page-width;
+  max-width: $width;
 
   @include govuk-if-ie8 {
-    width: $hmcts-page-width;
+    width: $width;
   }
 
   // On mobile, add half width gutters
@@ -16,7 +16,7 @@
 
   // As soon as the viewport is greater than the width of the page plus the
   // gutters, just centre the content instead of adding gutters.
-  @include mq($and: "(min-width: #{($hmcts-page-width + $hmcts-gutter * 2)})") {
+  @include mq($and: "(min-width: #{($width + $hmcts-gutter * 2)})") {
     margin: 0 auto;
   }
 }
