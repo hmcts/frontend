@@ -2,95 +2,102 @@
    #HEADER
    ========================================================================== */
 
-   .hmcts-header {
-    @include govuk-clearfix;
-    background-color: govuk-colour(black);
-    padding-top: govuk-spacing(3);
-    padding-bottom: govuk-spacing(3);
+.hmcts-header {
+  background-color: govuk-colour(black);
+  padding-top: govuk-spacing(3);
+  padding-bottom: govuk-spacing(3);
+}
+
+
+.hmcts-header__container {
+  @include hmcts-width-container;
+  @include govuk-clearfix;
+  position: relative;
+}
+
+
+.hmcts-header__service {
+  @include govuk-font($size: 24, $weight: bold);
+  display: block;
+
+  a:link,
+  a:active,
+  a:visited {
+    color: govuk-colour(white);
+    text-decoration: none;
   }
 
-
-  .hmcts-header__service {
-    @include govuk-font($size: 24, $weight: bold);
-    display: block;
-
-    a:link,
-    a:active,
-    a:visited {
-      color: govuk-colour(white);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    // This needs to be extracted as it’s very common
-    a:focus {
-      color: govuk-colour(black);
-    }
-
+  a:hover {
+    text-decoration: underline;
   }
 
+  // This needs to be extracted as it’s very common
+  a:focus {
+    color: govuk-colour(black);
+  }
+
+}
+
+
+.hmcts-header__navigation {
+  color: govuk-colour(white);
+  margin-top: govuk-spacing(1);
 
   @include mq($from: tablet) {
-
-    .hmcts-header__service {
-      float: left;
-    }
-
-    .hmcts-header__account {
-      float: right;
-    }
-
+    margin-top: govuk-spacing(1)-2px; // Subtle adjustments for positioning
   }
 
+}
 
-  /* ==========================================================================
-   #ACCOUNT NAVIGATION
-   ========================================================================== */
 
-   .hmcts-account-nav {
-    color: govuk-colour(white);
-    margin-top: govuk-spacing(1);
+.hmcts-header__navigation-list {
+  font-size: .1px; // Removes white space when using inline-block on child element.
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.hmcts-header__navigation-item {
+  @include govuk-font(19);
+  display: inline-block;
+  margin-right: govuk-spacing(4);
+
+  &:last-child {
+    margin-right: 0;
   }
 
+}
 
-  .hmcts-account-nav__list {
-    font-size: .1px; // Removes white space when using inline-block on child element.
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+.hmcts-header__navigation-link {
+
+  &:link,
+  &:visited,
+  &:active {
+    color: inherit;
   }
 
-
-  .hmcts-account-nav__item {
-    @include govuk-font(16);
-    display: inline-block;
-    margin-right: govuk-spacing(4);
-
-    &:last-child {
-      margin-right: 0;
-    }
-
+  &:hover {
+    text-decoration: underline;
   }
 
-
-  .hmcts-account-nav__link {
-
-    &:link,
-    &:visited,
-    &:active {
-      color: inherit;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    // This needs to be extracted as it’s very common
-    &:focus {
-      color: govuk-colour(black);
-    }
-
+  // This needs to be extracted as it’s very common
+  &:focus {
+    color: govuk-colour(black);
   }
+
+}
+
+
+@include mq($from: tablet) {
+
+  .hmcts-header__service {
+    float: left;
+  }
+
+  .hmcts-header__content {
+    float: right;
+  }
+
+}
