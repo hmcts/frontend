@@ -4,8 +4,7 @@
 
 .hmcts-header {
   background-color: govuk-colour(black);
-  padding-top: govuk-spacing(3);
-  padding-bottom: govuk-spacing(3);
+  padding-top: govuk-spacing(2);
 }
 
 
@@ -16,35 +15,82 @@
 }
 
 
-.hmcts-header__service {
-  @include govuk-font($size: 24, $weight: bold);
-  display: block;
+.hmcts-header__logo {
+  padding-bottom: govuk-spacing(2);
 
-  a:link,
-  a:active,
-  a:visited {
-    color: govuk-colour(white);
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  // This needs to be extracted as it’s very common
-  a:focus {
-    color: govuk-colour(black);
+  @include mq($from: tablet) {
+    float: left;
   }
 
 }
 
 
-.hmcts-header__navigation {
-  color: govuk-colour(white);
-  margin-top: govuk-spacing(1);
+.hmcts-header__content {
+  padding-bottom: 10px;
 
   @include mq($from: tablet) {
-    margin-top: govuk-spacing(1)-2px; // Subtle adjustments for positioning
+    float: right;
+  }
+
+}
+
+
+.hmcts-header__link {
+  @include govuk-font($size: 24, $weight: bold);
+  line-height: 24px; // Override due to alignment issue in Chrome
+  color: govuk-colour(white);
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: govuk-colour(white);
+  }
+
+  &:hover {
+    border-color: govuk-colour(white);
+  }
+
+  &:focus {
+    color: govuk-colour(black);
+    border-color: transparent;
+  }
+
+}
+
+
+// Logotype
+
+.hmcts-header__logotype {
+  float: left;
+}
+
+
+.hmcts-header__logotype-crest {
+  fill: currentColor;
+  margin-right: govuk-spacing(1);
+  vertical-align: middle;
+}
+
+
+.hmcts-header__logotype-text {
+  vertical-align: middle;
+}
+
+
+// Navigation
+
+.hmcts-header__navigation {
+  color: govuk-colour(white);
+  margin-top: govuk-spacing(1)-2px;
+
+  @include mq($from: tablet) {
+    margin-top: govuk-spacing(2)-2px; // Subtle adjustments for positioning
   }
 
 }
@@ -82,22 +128,8 @@
     text-decoration: underline;
   }
 
-  // This needs to be extracted as it’s very common
   &:focus {
     color: govuk-colour(black);
-  }
-
-}
-
-
-@include mq($from: tablet) {
-
-  .hmcts-header__service {
-    float: left;
-  }
-
-  .hmcts-header__content {
-    float: right;
   }
 
 }
