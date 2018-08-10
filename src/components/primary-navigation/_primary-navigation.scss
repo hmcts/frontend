@@ -24,7 +24,7 @@
 
 
 .hmcts-primary-navigation__item {
-  @include govuk-font(19);
+  @include govuk-font($size: 19, $weight: bold);
   display: inline-block;
   margin-right: govuk-spacing(4);
   margin-top: 0;
