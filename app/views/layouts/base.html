@@ -20,17 +20,14 @@
 {%- from "warning-text/macro.njk" import govukWarningText %}
 {%- from "checkboxes/macro.njk" import govukCheckboxes %}
 {%- from "radios/macro.njk" import govukRadios %}
-
 {%- from "global-header/macro.njk" import hmctsGlobalHeader %}
 {%- from "timeline/macro.njk" import hmctsTimeline %}
 {%- from "progress-bar/macro.njk" import hmctsProgressBar %}
 {%- from "primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 {%- from "sub-navigation/macro.njk" import hmctsSubNavigation %}
-
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
-<html>
   <head>
     <meta charset="utf-8">
     <title>HMCTS Frontend</title>
@@ -47,14 +44,14 @@
   </head>
   <body>
 
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-    {% block body %}{% endblock %}
+    {%- block body %}{% endblock %}
 
-    {% block scripts %}
-      {% include "includes/scripts.html" %}
-      {% block pageScripts %}{% endblock %}
-    {% endblock %}
+    {%- block scripts %}
+      {%- include "includes/scripts.html" %}
+      {%- block pageScripts %}{% endblock %}
+    {%- endblock %}
 
   </body>
 

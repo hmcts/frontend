@@ -5,3 +5,15 @@ $govuk-global-styles: true;
 
 // HMCTS Frontend
 @import "src/all";
+
+
+// App specific
+body {
+  margin: 0;
+  padding: $hmcts-gutter-half;
+
+  @include mq($from: tablet) {
+    padding: $hmcts-gutter;
+  }
+
+}
