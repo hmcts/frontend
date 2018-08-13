@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.9-alpha
+
+🔧 Fixes:
+
+- Primary nav and sub nav aria fixes for active state
+
 ## 0.0.8-alpha
 
 🆕 New features:
