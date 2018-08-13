@@ -33,6 +33,17 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.8-alpha
+
+🆕 New features:
+
+- Header component component
+- Primary navigation component
+- HMCTS container style
+
+🔧 Fixes:
+
+- Sub navigation now 19px font size
 
 ## 0.0.7-alpha
 
