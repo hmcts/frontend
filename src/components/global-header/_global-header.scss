@@ -36,8 +36,6 @@
 
 
 .hmcts-header__link {
-  @include govuk-font($size: 24, $weight: bold);
-  line-height: 24px; // Override due to alignment issue in Chrome
   color: govuk-colour(white);
   text-decoration: none;
   display: inline-block;
@@ -65,7 +63,6 @@
 
 
 // Logotype
-
 .hmcts-header__logotype {
   float: left;
 }
@@ -79,12 +76,13 @@
 
 
 .hmcts-header__logotype-text {
+  @include govuk-font($size: 24, $weight: bold);
+  line-height: 24px; // Override due to alignment issue in Chrome
   vertical-align: middle;
 }
 
 
 // Navigation
-
 .hmcts-header__navigation {
   color: govuk-colour(white);
   margin-top: govuk-spacing(1)-2px;
@@ -132,4 +130,9 @@
     color: govuk-colour(black);
   }
 
+}
+
+
+.hmcts-header__navigation-link[aria-current=page] {
+  text-decoration: none;
 }

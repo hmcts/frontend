@@ -2,22 +2,30 @@
 
 {% block body %}
 
-  <h1 class="govuk-heading-l">Global header</h1>
+  <h1 class="govuk-heading-l">Header</h1>
 
   {{ hmctsGlobalHeader({
-    serviceName: 'Service name',
-    serviceUrl: '#',
-    navigationLabel: 'Account navigation',
-    navigation: [
-      {
+
+    service: {
+      name: 'Service name',
+      url: '#'
+    },
+
+    navigation: {
+      label: 'Account navigation',
+      items: [{
         text: 'Nav item 1',
-        href: '#1'
-      },
-      {
+        href: '#1',
+        active: true
+      }, {
         text: 'Nav item 2',
-        href: '#2'
-      }
-    ]
+        href: '#1'
+      }, {
+      text: 'Nav item 3',
+      href: '#1'
+      }]
+    }
+
   }) }}
 
 {% endblock %}
