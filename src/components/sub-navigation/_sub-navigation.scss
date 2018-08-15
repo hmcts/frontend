@@ -85,4 +85,8 @@
 
   }
 
+  &:focus:before {
+    background-color: govuk-colour("black");
+  }
+
 }
