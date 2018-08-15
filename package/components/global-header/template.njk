@@ -1,10 +1,10 @@
-<header class="hmcts-header{{ params.classes if params.classes }}" role="banner">
+<header class="hmcts-header{% if params.classes %} {{ params.classes }}{% endif %}" role="banner">
 
-  <div class="hmcts-header__container {{ params.containerClasses if params.containerClasses }}">
+  <div class="hmcts-header__container{% if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
 
     <div class="hmcts-header__logo">
 
-      <a class="hmcts-header__link" href="{{ params.serviceUrl | default('/') }}">
+      <a class="hmcts-header__link" href="{{ params.service.url | default('/') }}">
 
         <span class="hmcts-header__logotype">
 
@@ -310,7 +310,7 @@
               C17.4,9.2,17.1,8.9,17,8.8z"/>
             </svg>
 
-          <span class="hmcts-header__logotype-text">{{ params.serviceName }}</span>
+          <span class="hmcts-header__logotype-text">{{ params.service.name }}</span>
 
         </span>
 
@@ -321,16 +321,16 @@
     {% if params.navigation %}
       <div class="hmcts-header__content">
 
-        <nav class="hmcts-header__navigation {{ params.navigationClasses if params.navigationClasses }}"{% if (params.navigationLabel) %} aria-label="{{ params.navigationLabel }}" {% endif %}>
+        <nav class="hmcts-header__navigation{% if params.navigation.classes %} {{ params.navigation.classes }}{% endif %}"{% if (params.navigation.label) %} aria-label="{{ params.navigation.label }}" {% endif %}>
 
           <ul class="hmcts-header__navigation-list">
 
-            {% for item in params.navigation %}
-
-              {% if item.href and item.text %}
-              <li class="hmcts-header__navigation-item"><a class="hmcts-header__navigation-link" href="{{ item.href }}">{{ item.text }}</a></li>
-              {% endif %}
-
+            {% for item in params.navigation.items %}
+              <li class="hmcts-header__navigation-item">
+                <a class="hmcts-header__navigation-link" href="{{ item.href }}" {{ 'aria-current="page"' | safe if item.active }}>
+                  {{ item.html | safe if item.html else item.text }}
+                </a>
+              </li>
             {% endfor %}
 
           </ul>
