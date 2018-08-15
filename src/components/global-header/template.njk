@@ -326,11 +326,11 @@
           <ul class="hmcts-header__navigation-list">
 
             {% for item in params.navigation.items %}
-
-              {% if item.href and item.text %}
-              <li class="hmcts-header__navigation-item"><a class="hmcts-header__navigation-link" href="{{ item.href }}" {{ 'aria-current="page"' | safe if item.active }}>{{ item.text }}</a></li>
-              {% endif %}
-
+              <li class="hmcts-header__navigation-item">
+                <a class="hmcts-header__navigation-link" href="{{ item.href }}" {{ 'aria-current="page"' | safe if item.active }}>
+                  {{ item.html | safe if item.html else item.text }}
+                </a>
+              </li>
             {% endfor %}
 
           </ul>
