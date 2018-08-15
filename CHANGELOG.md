@@ -33,6 +33,15 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.10-alpha
+
+🔧 Fixes:
+
+- Improved macro template for global header, sub navigation and primary navigation
+- Removed container from sub navigation component
+- Removed white space from crest and service name
+- Adjusted focus state style for sub navigation
+
 ## 0.0.9-alpha
 
 🔧 Fixes:
