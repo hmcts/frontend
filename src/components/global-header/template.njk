@@ -1,6 +1,6 @@
-<header class="hmcts-header{{ params.classes if params.classes }}" role="banner">
+<header class="hmcts-header{% if params.classes %} {{ params.classes }}{% endif %}" role="banner">
 
-  <div class="hmcts-header__container {{ params.containerClasses if params.containerClasses }}">
+  <div class="hmcts-header__container{% if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
 
     <div class="hmcts-header__logo">
 
@@ -321,7 +321,7 @@
     {% if params.navigation %}
       <div class="hmcts-header__content">
 
-        <nav class="hmcts-header__navigation {{ params.navigation.classes if params.navigation.classes }}"{% if (params.navigation.label) %} aria-label="{{ params.navigation.label }}" {% endif %}>
+        <nav class="hmcts-header__navigation{% if params.navigation.classes %} {{ params.navigation.classes }}{% endif %}"{% if (params.navigation.label) %} aria-label="{{ params.navigation.label }}" {% endif %}>
 
           <ul class="hmcts-header__navigation-list">
 

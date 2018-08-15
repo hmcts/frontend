@@ -7,13 +7,6 @@
 }
 
 
-.hmcts-sub-navigation__container {
-  @include hmcts-width-container;
-  @include govuk-clearfix;
-  position: relative;
-}
-
-
 .hmcts-sub-navigation__list {
   font-size: .1px; // Removes white space when using inline-block on child element.
   list-style: none;
@@ -72,7 +65,7 @@
 }
 
 
-.hmcts-sub-navigation__link[aria-current=page] {
+.hmcts-sub-navigation__link[aria-current] {
   color: govuk-colour(black);
   position: relative;
   text-decoration: none;

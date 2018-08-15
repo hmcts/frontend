@@ -65,6 +65,7 @@
 // Logotype
 .hmcts-header__logotype {
   float: left;
+  font-size: .1px; // Removes white space when using inline-block on child element.
 }
 
 
