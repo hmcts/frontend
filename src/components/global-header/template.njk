@@ -1,4 +1,4 @@
-<header class="hmcts-header{% if params.classes %} {{ params.classes }}{% endif %}" role="banner">
+<header class="hmcts-header {{- ' ' + params.classes if params.classes}}" role="banner">
 
   <div class="hmcts-header__container{% if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
 
