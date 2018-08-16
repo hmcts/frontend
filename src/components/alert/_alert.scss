@@ -1,0 +1,45 @@
+/* ==========================================================================
+   #ALERT
+   ========================================================================== */
+
+.hmcts-alert {
+  border: 5px solid govuk-colour("black");
+  font-size: .1px; // Removes white space when using inline-block on child element.
+  margin-bottom: govuk-spacing(6);
+  padding: govuk-spacing(2);
+}
+
+
+.hmcts-alert__icon {
+  margin-right: govuk-spacing(2);
+  float: left;
+  fill: currentColor;
+}
+
+
+.hmcts-alert__message {
+  @include govuk-font($size: 19);
+  color: govuk-colour("black");
+  display: block;
+  overflow: hidden;
+}
+
+
+.hmcts-alert__assistive {
+  @include govuk-visually-hidden;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+.hmcts-alert__success {
+  color: govuk-colour("green");
+  border-color: inherit;
+}
+
+
+.hmcts-alert__warning {
+  color: govuk-colour("bright-red");
+  border-color: inherit;
+}

@@ -1,0 +1,18 @@
+<div class="hmcts-alert {{- ' ' + params.classes if params.classes}}">
+  
+  {%- if params.type == 'success' %}
+  <svg class="hmcts-alert__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 22" height="22" width="26"><path d="M26,4.4L9.1,22L0,12.6l4.2-4.4l4.9,5.1L21.8,0L26,4.4z"/></svg>
+  {% endif -%}
+
+  {%- if params.type == 'warning' %}
+  <svg class="hmcts-alert__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 22" height="22" width="26"><path d="M14.2,13.9h-2.4V9.3h2.4V13.9z M14.2,18.5h-2.4v-2.3h2.4V18.5z M0,22h26L13,0L0,22z"/></svg>
+  {% endif -%}
+
+  <span class="hmcts-alert__message">
+    {%- if params.iconFallbackText %}<span class="hmcts-alert__assistive">{{params.iconFallbackText}}</span>{% endif -%}
+    {{ params.html | safe if params.html else params.text }}
+  </span>
+
+</div>
+
+
