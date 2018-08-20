@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .hmcts-alert {
-  border: 5px solid govuk-colour("black");
+  border: 5px solid govuk-colour("blue");
+  color: govuk-colour("blue");
   font-size: .1px; // Removes white space when using inline-block on child element.
   margin-bottom: govuk-spacing(6);
   padding: govuk-spacing(2);
@@ -11,9 +12,9 @@
 
 
 .hmcts-alert__icon {
-  margin-right: govuk-spacing(2);
-  float: left;
   fill: currentColor;
+  float: left;
+  margin-right: govuk-spacing(2);
 }
 
 
@@ -33,13 +34,13 @@
 /* Style variants
    ========================================================================== */
 
-.hmcts-alert__success {
-  color: govuk-colour("green");
+.hmcts-alert--success {
   border-color: inherit;
+  color: govuk-colour("green");
 }
 
 
-.hmcts-alert__warning {
-  color: govuk-colour("bright-red");
+.hmcts-alert--warning {
   border-color: inherit;
+  color: govuk-colour("bright-red");
 }

@@ -8,18 +8,28 @@
 
       <h1 class="govuk-heading-l">Alert</h1>
 
+      <h2 class="govuk-heading-m">Success</h2>
+
       {{ hmctsAlert({
-        classes: 'hmcts-alert__success',
         type: 'success',
         text: 'You have successfully added 1 question.',
         iconFallbackText: 'Success'
       }) }}
 
+      <h2 class="govuk-heading-m">Warning</h2>
+
       {{ hmctsAlert({
-        classes: 'hmcts-alert__warning',
         type: 'warning',
         text: 'Questions weren’t sent - try again.',
         iconFallbackText: 'Warning'
+      }) }}
+
+      <h2 class="govuk-heading-m">Information</h2>
+
+      {{ hmctsAlert({
+        type: 'information',
+        text: 'Select text to add comment.',
+        iconFallbackText: 'information'
       }) }}
 
     </div>
