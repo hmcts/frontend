@@ -1,4 +1,4 @@
-<nav class="hmcts-primary-navigation{% if params.classes %} {{ params.classes }}{% endif %}"{% if (params.label) %} aria-label="{{ params.label }}"{% endif %}>
+<nav class="hmcts-primary-navigation {{- ' ' + params.classes if params.classes}}"{% if (params.label) %} aria-label="{{ params.label }}"{% endif %}>
   
   <div class="hmcts-primary-navigation__container{% if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
    
