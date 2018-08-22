@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #ALERT
+   ========================================================================== */
+
+.hmcts-alert {
+  border: 5px solid govuk-colour("blue");
+  color: govuk-colour("blue");
+  font-size: .1px; // Removes white space when using inline-block on child element.
+  margin-bottom: govuk-spacing(6);
+  padding: govuk-spacing(2);
+}
+
+
+.hmcts-alert__icon {
+  fill: currentColor;
+  float: left;
+  margin-right: govuk-spacing(2);
+}
+
+
+.hmcts-alert__message {
+  @include govuk-font($size: 19);
+  color: govuk-colour("black");
+  display: block;
+  overflow: hidden;
+}
+
+
+.hmcts-alert__assistive {
+  @include govuk-visually-hidden;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+.hmcts-alert--success {
+  border-color: inherit;
+  color: govuk-colour("green");
+}
+
+
+.hmcts-alert--warning {
+  border-color: inherit;
+  color: govuk-colour("bright-red");
+}

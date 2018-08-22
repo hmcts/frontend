@@ -4,7 +4,7 @@
 {% set headingLevel = params.headingLevel %}
 {% endif %}
 
-<div class="hmcts-timeline{% if params.classes %} {{ params.classes }}{% endif %}">
+<div class="hmcts-timeline {{- ' ' + params.classes if params.classes}}">
 
   {% for event in params.events %}
   <div class="hmcts-timeline__item">

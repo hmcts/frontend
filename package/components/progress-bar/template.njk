@@ -1,4 +1,4 @@
-<div class="hmcts-progress-bar{% if params.classes %} {{ params.classes }}{% endif %}">
+<div class="hmcts-progress-bar {{- ' ' + params.classes if params.classes}}">
   <ol class="hmcts-progress-bar__list">
     {% for item in params.items %}
     <li class="hmcts-progress-bar__list-item" {{ 'aria-current="step"' | safe if item.active }}>

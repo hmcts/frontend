@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.11-alpha
+
+🆕 New features:
+
+- Alert component
+
 ## 0.0.10-alpha
 
 🔧 Fixes:
@@ -52,7 +58,7 @@
 
 🆕 New features:
 
-- Header component component
+- Header component
 - Primary navigation component
 - HMCTS container style
 
