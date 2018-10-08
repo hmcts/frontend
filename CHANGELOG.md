@@ -33,6 +33,17 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.12-alpha
+
+🆕 New features:
+
+- Footer component
+
+🔧 Fixes:
+
+- Removed crest from global header
+- Added colour variables that were not part of GDS colours
+
 ## 0.0.11-alpha
 
 🆕 New features:

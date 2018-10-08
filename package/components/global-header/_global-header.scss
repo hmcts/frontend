@@ -26,7 +26,7 @@
 
 
 .hmcts-header__content {
-  padding-bottom: 10px;
+  padding-bottom: govuk-spacing(2);
 
   @include mq($from: tablet) {
     float: right;
@@ -36,12 +36,15 @@
 
 
 .hmcts-header__link {
-  color: govuk-colour(white);
-  text-decoration: none;
-  display: inline-block;
-  vertical-align: top;
+  @include govuk-font($size: 24, $weight: bold);
   border-bottom: 1px solid transparent;
+  color: govuk-colour(white);
+  display: inline-block;
+  text-decoration: none;
+  line-height: 25px; // Override due to alignment issue in Chrome
   margin-bottom: -1px;
+  overflow: hidden; // Fixes focus gaps in background colour
+  vertical-align: middle;
 
   &:link,
   &:visited,
@@ -55,31 +58,10 @@
   }
 
   &:focus {
-    color: govuk-colour(black);
     border-color: transparent;
+    color: govuk-colour(black);
   }
 
-}
-
-
-// Logotype
-.hmcts-header__logotype {
-  float: left;
-  font-size: .1px; // Removes white space when using inline-block on child element.
-}
-
-
-.hmcts-header__logotype-crest {
-  fill: currentColor;
-  margin-right: govuk-spacing(1);
-  vertical-align: middle;
-}
-
-
-.hmcts-header__logotype-text {
-  @include govuk-font($size: 24, $weight: bold);
-  line-height: 24px; // Override due to alignment issue in Chrome
-  vertical-align: middle;
 }
 
 
@@ -87,11 +69,6 @@
 .hmcts-header__navigation {
   color: govuk-colour(white);
   margin-top: govuk-spacing(1)-2px;
-
-  @include mq($from: tablet) {
-    margin-top: govuk-spacing(2)-2px; // Subtle adjustments for positioning
-  }
-
 }
 
 
