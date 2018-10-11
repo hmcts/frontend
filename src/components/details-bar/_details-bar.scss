@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #DETAILS BAR
+   ========================================================================== */
+
+.hmcts-details-bar {
+  background-color: govuk-colour("blue");
+  color: govuk-colour("white");
+  padding-top: govuk-spacing(3);
+  padding-bottom: govuk-spacing(3);
+}
+
+.hmcts-details-bar__container {
+  @include hmcts-width-container;
+}
+
+.hmcts-details-bar__reference {
+  @include govuk-font(16);
+  margin-right: govuk-spacing(2);
+}
+
+
+.hmcts-details-bar__title {
+  @include govuk-font(16);
+}
