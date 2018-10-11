@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.13-alpha
+
+🆕 New features:
+
+- Details bar component (also known as case bar or entity bar)
+
 ## 0.0.12-alpha
 
 🆕 New features:
