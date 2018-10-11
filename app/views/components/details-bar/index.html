@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Details bar</h1>
+
+  {{ hmctsDetailsBar({
+    reference: 'FR1231612322',
+    title: { text: 'Some title' }
+  }) }}
+
+  <br>
+  <h2 class="govuk-heading-m">HMTL title</h2>
+  {{ hmctsDetailsBar({
+    reference: 'FR1231612322',
+    title: { html: '<b>John Smith</b> v <b>Jane Smith</b>' }
+  }) }}
+
+{% endblock %}
