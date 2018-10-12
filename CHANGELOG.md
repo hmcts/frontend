@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.14-alpha
+
+🆕 New features:
+
+- Details bar component to include action buttons when required
+
 ## 0.0.13-alpha
 
 🆕 New features:
