@@ -11,6 +11,7 @@
       {% endif %}
     </div>
 
+    {% if params.items %}
     <div class="hmcts-details-bar__actions">
       {% for item in params.items %}        
         {{ govukButton({
@@ -20,6 +21,7 @@
         }) }}
       {% endfor %}
     </div>
+    {% endif %}
 
   </div>
 
