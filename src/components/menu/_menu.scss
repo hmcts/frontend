@@ -1,0 +1,99 @@
+/* ==========================================================================
+   #MENU
+   ========================================================================== */
+
+.hmcts-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hmcts-menu__item,
+.hmcts-menu__toggle-button {
+  display: inline-block;
+  margin-right: govuk-spacing(2);
+  margin-bottom: govuk-spacing(2);
+  width: auto; // Override GDS’s 100% width
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+
+.hmcts-menu [type=button] span {
+	font-size: 2em;
+	position: relative;
+	top: 0.1em;
+	left: 2px;
+	line-height: 0;
+}
+
+
+// menu items without js on big and small screens (BUTTON)
+.hmcts-menu__item {
+  @extend .govuk-button;
+}
+
+.hmcts-menu [role=menuitem] {
+  // WITH JS on small screens (Sketch file)
+  @include mq($until: 45em) {
+    display: block;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  &:focus {
+		position: relative;
+		z-index: 10;
+		background-color: #ccc;
+	}
+
+  // WITH JS on big screens (back to button)
+	@media(min-width: 45em) {
+   // put back styles
+	}
+}
+
+.hmcts-menu [role=menu] {
+	width: 10em;
+}
+
+.hmcts-menu [role=menu] {
+	position: absolute;
+	@media(min-width: 45em) {
+		border: none;
+		width: auto;
+		position: static;
+	}
+}
+
+.hmcts-menu__toggle-button {
+  margin-right: 0;
+  margin-bottom: govuk-spacing(1);
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 5px;
+    background-repeat: no-repeat;
+    margin-left: govuk-spacing(2);
+    background-image: url(#{$hmcts-images-path}icon-arrow-white-down.svg);
+  }
+}
+
+.hmcts-menu__toggle-button[aria-expanded="true"] {
+  &:after {
+    background-image: url(#{$hmcts-images-path}icon-arrow-white-up.svg);
+  }
+}
+
+.hmcts-menu [aria-expanded="true"] + [role=menu] {
+	display: block;
+}
+
+.hmcts-menu [aria-expanded="false"] + [role=menu] {
+	display: none;
+}

@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h1 class="govuk-heading-l">Menu</h1>
+
+  {{hmctsMenu({
+    items: [{
+      text: 'Archive',
+      classes: 'hmcts-button--secondary'
+    }, {
+      text: 'Reassign',
+      classes: 'hmcts-button--secondary'
+    }, {
+      text: 'Delete',
+      classes: 'hmcts-button--secondary'
+    }]
+  })}}
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    new HMCTSFrontend.Menu({
+      container: $('.hmcts-menu'),
+      mq: '(min-width: 45em)',
+      buttonText: 'Actions'
+    });
+  </script>
+{% endblock %}
