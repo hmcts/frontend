@@ -3,6 +3,7 @@
 {% block body %}
   <h1 class="govuk-heading-l">Menu</h1>
 
+  <h2 class="govuk-heading-m">Variant 1</h2>
   {{hmctsMenu({
     items: [{
       text: 'Archive',
@@ -15,15 +16,48 @@
       classes: 'hmcts-button--secondary'
     }]
   })}}
+  <br><br><br>
+
+  <h2 class="govuk-heading-m">Variant 2</h2>
+  <div class="variant2">
+    {{hmctsMenu({
+      items: [{
+        text: 'Make decision'
+      }, {
+        text: 'List for hearing',
+        classes: 'hmcts-button--secondary'
+      }]
+    })}}
+  </div>
+  <style>
+    .variant2 {
+      float: right;
+    }
+    @media (min-width: 35em) {
+      .variant2 {
+        float: none;
+      }
+    }
+
+  </style>
 
 {% endblock %}
 
 {% block pageScripts %}
   <script>
     new HMCTSFrontend.Menu({
-      container: $('.hmcts-menu'),
+      container: $('.hmcts-menu:first'),
       mq: '(min-width: 45em)',
       buttonText: 'Actions'
     });
+
+    new HMCTSFrontend.Menu({
+      container: $('.hmcts-menu').eq(1),
+      mq: '(min-width: 35em)',
+      buttonText: 'Next step...',
+      buttonClasses: 'hmcts-button--secondary hmcts-menu__toggle-button--secondary',
+      menuClasses: 'hmcts-menu__wrapper--right'
+    });
+
   </script>
 {% endblock %}

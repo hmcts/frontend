@@ -1,10 +1,13 @@
 HMCTSFrontend.Menu = function(params) {
 	this.container = params.container;
 	this.menu = this.container.find('.hmcts-menu__wrapper');
+	if(params.menuClasses) {
+		this.menu.addClass(params.menuClasses);
+	}
 	this.menu.attr('role', 'menu');
-	this.container.find('.hmcts-menu__item').attr('role', 'menuitem');
 	this.mq = params.mq;
 	this.buttonText = params.buttonText;
+	this.buttonClasses = params.buttonClasses || '';
 	this.keys = { esc: 27, up: 38, down: 40, tab: 9 };
 	this.menu.on('keydown', '[role=menuitem]', $.proxy(this, 'onButtonKeydown'));
 	this.createToggleButton();
@@ -12,7 +15,7 @@ HMCTSFrontend.Menu = function(params) {
 };
 
 HMCTSFrontend.Menu.prototype.createToggleButton = function() {
-	this.menuButton = $('<button class="govuk-button hmcts-menu__toggle-button" type="button" aria-haspopup="true" aria-expanded="false">'+this.buttonText+'</button>');
+	this.menuButton = $('<button class="govuk-button hmcts-menu__toggle-button ' + this.buttonClasses + '" type="button" aria-haspopup="true" aria-expanded="false">'+this.buttonText+'</button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
 	this.menuButton.on('keydown', $.proxy(this, 'onMenuKeyDown'));
 };
@@ -34,18 +37,43 @@ HMCTSFrontend.Menu.prototype.checkMode = function(mql) {
 HMCTSFrontend.Menu.prototype.enableSmallMode = function() {
 	this.container.prepend(this.menuButton);
 	this.hideMenu();
+	this.removeButtonClasses();
+	this.menu.attr('role', 'menu');
+	this.container.find('.hmcts-menu__item').attr('role', 'menuitem');
 };
 
 HMCTSFrontend.Menu.prototype.enableBigMode = function() {
 	this.menuButton.detach();
 	this.showMenu();
+	this.addButtonClasses();
+	this.menu.removeAttr('role');
+	this.container.find('.hmcts-menu__item').removeAttr('role');
+};
+
+HMCTSFrontend.Menu.prototype.removeButtonClasses = function() {
+	this.menu.find('.hmcts-menu__item').each(function(index, el) {
+		if($(el).hasClass('hmcts-button--secondary')) {
+			$(el).attr('data-secondary', 'true');
+			$(el).removeClass('hmcts-button--secondary');
+		}
+		$(el).removeClass('govuk-button');
+	});
+};
+
+HMCTSFrontend.Menu.prototype.addButtonClasses = function() {
+	this.menu.find('.hmcts-menu__item').each(function(index, el) {
+		if($(el).attr('data-secondary') == 'true') {
+			$(el).addClass('hmcts-button--secondary');
+		}
+		$(el).addClass('govuk-button');
+	});
 };
 
 HMCTSFrontend.Menu.prototype.hideMenu = function() {
 	this.menuButton.attr('aria-expanded', 'false');
 };
 
-HMCTSFrontend.Menu.prototype.showMenu = function(first_argument) {
+HMCTSFrontend.Menu.prototype.showMenu = function() {
 	this.menuButton.attr('aria-expanded', 'true');
 };
 
@@ -99,7 +127,7 @@ HMCTSFrontend.Menu.prototype.focusNext = function(currentButton) {
 	if(next[0]) {
 		next.focus();
 	} else {
-		this.container.find('input').first().focus();
+		this.container.find('[role=menutiem]').first().focus();
 	}
 };
 
@@ -108,6 +136,6 @@ HMCTSFrontend.Menu.prototype.focusPrevious = function(currentButton) {
 	if(prev[0]) {
 		prev.focus();
 	} else {
-		this.container.find('input').last().focus();
+		this.container.find('[role=menutiem]').last().focus();
 	}
 };

@@ -7,66 +7,17 @@
   display: inline-block;
 }
 
-.hmcts-menu__item,
+/* TOGGLE BUTTON */
+
 .hmcts-menu__toggle-button {
   display: inline-block;
   margin-right: govuk-spacing(2);
   margin-bottom: govuk-spacing(2);
   width: auto; // Override GDS’s 100% width
 
-
   &:last-child {
     margin-right: 0;
   }
-
-}
-
-.hmcts-menu [type=button] span {
-	font-size: 2em;
-	position: relative;
-	top: 0.1em;
-	left: 2px;
-	line-height: 0;
-}
-
-
-// menu items without js on big and small screens (BUTTON)
-.hmcts-menu__item {
-  @extend .govuk-button;
-}
-
-.hmcts-menu [role=menuitem] {
-  // WITH JS on small screens (Sketch file)
-  @include mq($until: 45em) {
-    display: block;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: left;
-  }
-
-  &:focus {
-		position: relative;
-		z-index: 10;
-		background-color: #ccc;
-	}
-
-  // WITH JS on big screens (back to button)
-	@media(min-width: 45em) {
-   // put back styles
-	}
-}
-
-.hmcts-menu [role=menu] {
-	width: 10em;
-}
-
-.hmcts-menu [role=menu] {
-	position: absolute;
-	@media(min-width: 45em) {
-		border: none;
-		width: auto;
-		position: static;
-	}
 }
 
 .hmcts-menu__toggle-button {
@@ -88,6 +39,81 @@
   &:after {
     background-image: url(#{$hmcts-images-path}icon-arrow-white-up.svg);
   }
+}
+
+.hmcts-menu__toggle-button--secondary {
+  margin-right: 0;
+  margin-bottom: govuk-spacing(1);
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 5px;
+    background-repeat: no-repeat;
+    margin-left: govuk-spacing(2);
+    background-image: url(#{$hmcts-images-path}icon-arrow-black-down.svg);
+  }
+}
+
+.hmcts-menu__toggle-button--secondary[aria-expanded="true"] {
+  &:after {
+    background-image: url(#{$hmcts-images-path}icon-arrow-black-up.svg);
+  }
+}
+
+/* MENU ITEM */
+
+.hmcts-menu__item {
+  display: inline-block;
+  margin-right: govuk-spacing(2);
+  margin-bottom: govuk-spacing(2);
+  width: auto; // Override GDS’s 100% width
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.hmcts-menu [role=menuitem] {
+  @include govuk-font(19);
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  text-align: left;
+  margin-bottom: 0;
+  border: none;
+  background-color: govuk-colour("grey-3");
+  padding: 10px;
+
+  &:hover {
+    background-color: govuk-colour("grey-2");
+  }
+
+  &:focus {
+		position: relative;
+    z-index: 10;
+    outline: 3px solid #ffbf47;
+    outline-offset: 0;
+	}
+}
+
+/* MENU WRAPPER */
+
+.hmcts-menu__wrapper {
+  font-size: .1px; /* Hide whitespace between elements */
+}
+
+.hmcts-menu__wrapper--right {
+  right: 0;
+}
+
+.hmcts-menu [role=menu] {
+  width: 200px;
+  position: absolute;
+  z-index: 10;
 }
 
 .hmcts-menu [aria-expanded="true"] + [role=menu] {
