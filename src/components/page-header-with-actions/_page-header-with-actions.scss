@@ -1,0 +1,56 @@
+.hmcts-page-heading {
+  @include govuk-clearfix;
+  font-size: .1px; // Hide whitespace between elements
+  min-height: govuk-spacing(7); // Match button height
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+}
+
+
+.hmcts-page-heading__title {
+
+  [class^=govuk-heading-] {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  @include mq($from: tablet) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+
+.hmcts-page-heading__actions {
+
+  @include mq($from: tablet) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+
+.hmcts-page-heading__action {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: govuk-spacing(2);
+  margin-top: govuk-spacing(2);
+  width: auto; // Override GDS’s 100% width
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include mq($from: tablet) {
+    margin-top: 0;
+  }
+
+}

@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Page heading with actions</h1>
+
+
+  <h2 class="govuk-heading-m">Example 1</h2>
+
+  {{ hmctsPageHeaderWithActions({
+    title: { html: '<h1 class="govuk-heading-xl">Your cases</h1>' },
+    items: [
+      {
+        text: 'Get new case'
+      }
+    ]
+  }) }}
+
+
+  <br><br>
+
+
+  <h2 class="govuk-heading-m">Example 2</h2>
+
+  {{ hmctsPageHeaderWithActions({
+    title: { html: '<h1 class="govuk-heading-xl">Case file</h1>' },
+    items: [
+      {
+        classes: 'hmcts-button--secondary',
+        text: 'Upload new item'
+      }
+    ]
+  }) }}
+
+
+  <br><br>
+
+
+  <h2 class="govuk-heading-m">Example 3</h2>
+
+  {{ hmctsPageHeaderWithActions({
+    title: { html: '<h1 class="govuk-heading-xl">Page heading</h1>' },
+    items: [
+      {
+        text: 'Action 1'
+      },
+      {
+        classes: 'hmcts-button--secondary',
+        text: 'Action 2'
+      }
+    ]
+  }) }}
+
+
+{% endblock %}
