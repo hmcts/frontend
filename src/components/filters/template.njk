@@ -1,0 +1,106 @@
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "radios/macro.njk" import govukRadios %}
+
+<div class="hmcts-filter">
+
+  <div class="hmcts-filter__header">
+    <h2 class="govuk-heading-m">Filter</h2>
+  </div>
+
+  <div class="hmcts-filter__content">
+
+    <div class="hmcts-filter__selected">
+
+      <h2 class="govuk-heading-m">Selected filters</h2>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Categories</h3>
+
+      <ul class="hmcts-filter-tags">
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Documents</a></li>
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Hearings</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type of person</h3>
+
+      <ul class="hmcts-filter-tags govuk-!-margin-bottom-0">
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Legal adviser</a></li>
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Magistrate</a></li>
+      </ul>
+
+    </div>
+
+    <div class="hmcts-filter__options">
+
+      {{ govukCheckboxes({
+        idPrefix: 'categories',
+        name: 'categories',
+        fieldset: {
+          legend: {
+            text: 'Categories',
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--m'
+          }
+        },
+        items: [
+          {
+            value: 'documents',
+            text: 'Documents (18)'
+          },
+          {
+            value: 'hearings',
+            text: 'Hearings (5)'
+          },
+          {
+            value: 'Decisions',
+            text: 'Decisions (2)'
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: 'typeofperson',
+        name: 'typeofperson',
+        fieldset: {
+          legend: {
+            text: 'Type of person',
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--m'
+          }
+        },
+        items: [
+          {
+            value: 'judge',
+            text: 'Judge'
+          },
+          {
+            value: 'court-administrator',
+            text: 'Court administrator'
+          },
+          {
+            value: 'legal-adviser',
+            text: 'Legal adviser'
+          },
+          {
+            value: 'magistrate',
+            text: 'Magistrate'
+          },
+          {
+            value: 'solicitor',
+            text: 'Solicitor'
+          },
+          {
+            value: 'applicant',
+            text: 'Applicant'
+          },
+          {
+            value: 'respondent',
+            text: 'Respondent'
+          }
+        ]
+      }) }}
+
+    </div>
+
+  </div>
+
+</div>
