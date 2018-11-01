@@ -9,7 +9,7 @@
 
 .hmcts-filter__header {
   background-color: govuk-colour("grey-3");
-  padding: govuk-spacing(4);
+  padding: govuk-spacing(2) govuk-spacing(4);
 
   [class^=govuk-heading-] {
     margin-bottom: 0;
@@ -22,6 +22,27 @@
   background-color: govuk-colour("grey-4");
   box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
   padding: govuk-spacing(4);
+}
+
+
+.hmcts-filter__selected-heading {
+  font-size: .1px; // Hide whitespace between elements
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+}
+
+
+.hmcts-filter__heading-title,
+.hmcts-filter__heading-action {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }
 
 
@@ -42,7 +63,7 @@
   @include govuk-font(16);
   background-color: govuk-colour("white");
   border: 1px solid govuk-colour("black");
-  color: black;
+  color: govuk-colour("black");
   display: inline-block;
   margin-top: govuk-spacing(1);
   padding: govuk-spacing(1);
@@ -53,12 +74,28 @@
     color: govuk-colour("black");
   }
 
+  &:focus {
+    background-color: govuk-colour("white");
+  }
+
+  &:hover {
+    background-color: govuk-colour("black");
+    color: govuk-colour("white");
+  }
+
   &:after {
-    content: "\00d7"; // × symbol
+    background-image: url(#{$hmcts-images-path}icon-tag-remove-cross.svg);
+    content: "";
     display: inline-block;
     font-weight: bold;
+    height: 10px;
     margin-left: govuk-spacing(1);
     vertical-align: middle;
+    width: 10px;
+  }
+
+  &:hover:after {
+    background-image: url(#{$hmcts-images-path}icon-tag-remove-cross-white.svg);
   }
 
 }
@@ -68,4 +105,9 @@
   box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
   margin-top: -1px;
   padding: govuk-spacing(4);
+
+  div:last-of-type {
+    margin-bottom: 0; // IE9 +
+  }
+
 }

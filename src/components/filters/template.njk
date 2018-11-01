@@ -1,5 +1,6 @@
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
 {% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
 
 <div class="hmcts-filter">
 
@@ -11,7 +12,17 @@
 
     <div class="hmcts-filter__selected">
 
-      <h2 class="govuk-heading-m">Selected filters</h2>
+      <div class="hmcts-filter__selected-heading">
+        
+        <div class="hmcts-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
+        </div>
+
+        <div class="hmcts-filter__heading-action">
+          <p><a href="#">Clear filters</a></p>
+        </div>
+
+      </div>
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Categories</h3>
 
@@ -25,11 +36,17 @@
       <ul class="hmcts-filter-tags govuk-!-margin-bottom-0">
         <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Legal adviser</a></li>
         <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Magistrate</a></li>
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Solicitor</a></li>
+        <li><a class="hmcts-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Applicant</a></li>
       </ul>
 
     </div>
 
     <div class="hmcts-filter__options">
+
+      {{ govukButton({
+        text: 'Apply filters'
+      }) }}
 
       {{ govukCheckboxes({
         idPrefix: 'categories',
@@ -44,11 +61,13 @@
         items: [
           {
             value: 'documents',
-            text: 'Documents (18)'
+            text: 'Documents (18)',
+            checked: true
           },
           {
             value: 'hearings',
-            text: 'Hearings (5)'
+            text: 'Hearings (5)',
+            checked: true
           },
           {
             value: 'Decisions',
@@ -78,19 +97,23 @@
           },
           {
             value: 'legal-adviser',
-            text: 'Legal adviser'
+            text: 'Legal adviser',
+            checked: true
           },
           {
             value: 'magistrate',
-            text: 'Magistrate'
+            text: 'Magistrate',
+            checked: true
           },
           {
             value: 'solicitor',
-            text: 'Solicitor'
+            text: 'Solicitor',
+            checked: true
           },
           {
             value: 'applicant',
-            text: 'Applicant'
+            text: 'Applicant',
+            checked: true
           },
           {
             value: 'respondent',
