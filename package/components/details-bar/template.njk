@@ -1,7 +1,7 @@
 {%- from "button/macro.njk" import govukButton %}
 
 <div class="hmcts-details-bar {{- ' ' + params.classes if params.classes}}">
-  
+
   <div class="hmcts-details-bar__container">
 
     <div class="hmcts-details-bar__details">
@@ -13,7 +13,7 @@
 
     {% if params.items %}
     <div class="hmcts-details-bar__actions">
-      {% for item in params.items %}        
+      {% for item in params.items %}
         {{ govukButton({
           classes: 'hmcts-details-bar__action ' + (item.classes if item.classes),
           text: item.text,
