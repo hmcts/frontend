@@ -1,0 +1,173 @@
+/* ==========================================================================
+   #FILTER
+   ========================================================================== */
+
+.hmcts-filter {
+  box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
+}
+
+
+.hmcts-filter__header {
+  background-color: govuk-colour("grey-3");
+  font-size: .1px; // Hide whitespace between elements
+  padding: govuk-spacing(2) govuk-spacing(4);
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  [class^=govuk-heading-] {
+    margin-bottom: 0;
+  }
+
+}
+
+
+.hmcts-filter__header-title,
+.hmcts-filter__header-action {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+
+
+.hmcts-filter__close {
+    color: govuk-colour("black");
+    cursor: pointer; // I know Adam won’t like this
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+
+    // Fix unwanted button padding in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    &::before {
+      background-image: url(#{$hmcts-images-path}icon-close-cross-black.svg);
+      content: "";
+      display: inline-block;
+      height: 14px;
+      margin-right: govuk-spacing(1);
+      position: relative;
+      top: -1px; // Alignment tweak
+      vertical-align: middle;
+      width: 14px;
+    }
+
+  }
+
+
+
+.hmcts-filter__close {
+  @include govuk-font(19);
+}
+
+
+.hmcts-filter__selected {
+  background-color: govuk-colour("grey-4");
+  box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
+  padding: govuk-spacing(4);
+
+  ul:last-of-type {
+    margin-bottom: 0; // IE9 +
+  }
+
+}
+
+
+.hmcts-filter__selected-heading {
+  font-size: .1px; // Hide whitespace between elements
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+}
+
+
+.hmcts-filter__heading-title,
+.hmcts-filter__heading-action {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+.hmcts-filter-tags {
+  font-size: .1px;
+  margin-bottom: govuk-spacing(4); // Needs to adjust to 15px on mobile
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    margin-right: govuk-spacing(2);
+  }
+
+}
+
+
+.hmcts-filter__tag {
+  @include govuk-font(16);
+  background-color: govuk-colour("white");
+  border: 1px solid govuk-colour("black");
+  color: govuk-colour("black");
+  display: inline-block;
+  margin-top: govuk-spacing(1);
+  padding: govuk-spacing(1);
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: govuk-colour("black");
+  }
+
+  &:focus {
+    background-color: govuk-colour("white");
+  }
+
+  &:hover {
+    background-color: govuk-colour("black");
+    color: govuk-colour("white");
+  }
+
+  &:after {
+    background-image: url(#{$hmcts-images-path}icon-tag-remove-cross.svg);
+    content: "";
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    margin-left: govuk-spacing(1);
+    vertical-align: middle;
+    width: 10px;
+  }
+
+  &:hover:after {
+    background-image: url(#{$hmcts-images-path}icon-tag-remove-cross-white.svg);
+  }
+
+}
+
+
+.hmcts-filter__options {
+  box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
+  margin-top: -1px;
+  padding: govuk-spacing(4);
+
+  div:last-of-type {
+    margin-bottom: 0; // IE9 +
+  }
+
+}
