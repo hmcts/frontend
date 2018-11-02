@@ -2,7 +2,7 @@
 
 {% block body %}
 
-  <h1 class="govuk-heading-l">Filters</h1>
+  <h1 class="govuk-heading-l">Filter</h1>
 
   {% set filterOptionsHtml %}
     {{ govukCheckboxes({
@@ -85,32 +85,50 @@
       text: 'Filter'
     },
     selectedFilters: {
+
       heading: {
         text: 'Selected filters'
       },
+
       clearLink: {
         text: 'Clear filters'
       },
-      categories: [{
-        heading: {
-          text: 'Type of person'
+
+      categories: [
+        {
+          heading: {
+            text: 'Categories'
+          },
+          items: [{
+            href: '/path/to/remove/this',
+            text: 'Documents'
+          }, {
+            href: '/path/to/remove/this',
+            text: 'Hearings'
+          }]
         },
-        items: [{
-          href: '/path/to/remove/this',
-          text: 'Legal advisor'
-        }]
-      }, {
-        heading: {
-          text: 'Beautiful'
-        },
-        items: [{
-          href: '/path/to/remove/this',
-          text: 'Stuff'
-        }, {
-          href: '/path/to/remove/this',
-          text: 'Stuff'
-        }]
-      }]
+        {
+          heading: {
+            text: 'Type of person'
+          },
+          items: [{
+            href: '/path/to/remove/this',
+            text: 'Legal advisor'
+          },
+          {
+            href: '/path/to/remove/this',
+            text: 'Magistrate'
+          },
+          {
+            href: '/path/to/remove/this',
+            text: 'Solicitor'
+          },
+          {
+            href: '/path/to/remove/this',
+            text: 'Applicant'
+          }]
+        }
+      ]
     },
     optionsHtml: filterOptionsHtml
   }) }}
