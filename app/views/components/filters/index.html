@@ -4,6 +4,115 @@
 
   <h1 class="govuk-heading-l">Filters</h1>
 
-  {{ hmctsFilters() }}
+  {% set filterOptionsHtml %}
+    {{ govukCheckboxes({
+      idPrefix: 'categories',
+      name: 'categories',
+      fieldset: {
+        legend: {
+          text: 'Categories',
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: [
+        {
+          value: 'documents',
+          text: 'Documents (18)',
+          checked: true
+        },
+        {
+          value: 'hearings',
+          text: 'Hearings (5)',
+          checked: true
+        },
+        {
+          value: 'Decisions',
+          text: 'Decisions (2)'
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: 'typeofperson',
+      name: 'typeofperson',
+      fieldset: {
+        legend: {
+          text: 'Type of person',
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: [
+        {
+          value: 'judge',
+          text: 'Judge'
+        },
+        {
+          value: 'court-administrator',
+          text: 'Court administrator'
+        },
+        {
+          value: 'legal-adviser',
+          text: 'Legal adviser',
+          checked: true
+        },
+        {
+          value: 'magistrate',
+          text: 'Magistrate',
+          checked: true
+        },
+        {
+          value: 'solicitor',
+          text: 'Solicitor',
+          checked: true
+        },
+        {
+          value: 'applicant',
+          text: 'Applicant',
+          checked: true
+        },
+        {
+          value: 'respondent',
+          text: 'Respondent'
+        }
+      ]
+    }) }}
+  {% endset %}
+
+  {{ hmctsFilters({
+    heading: {
+      text: 'Filter'
+    },
+    selectedFilters: {
+      heading: {
+        text: 'Selected filters'
+      },
+      clearLink: {
+        text: 'Clear filters'
+      },
+      categories: [{
+        heading: {
+          text: 'Type of person'
+        },
+        items: [{
+          href: '/path/to/remove/this',
+          text: 'Legal advisor'
+        }]
+      }, {
+        heading: {
+          text: 'Beautiful'
+        },
+        items: [{
+          href: '/path/to/remove/this',
+          text: 'Stuff'
+        }, {
+          href: '/path/to/remove/this',
+          text: 'Stuff'
+        }]
+      }]
+    },
+    optionsHtml: filterOptionsHtml
+  }) }}
 
 {% endblock %}
