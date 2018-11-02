@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.17-alpha
+
+🆕 New features:
+
+- Filter
+
 ## 0.0.16-alpha
 
 - Test out publish with travis
