@@ -1,0 +1,13 @@
+language: node_js
+before_deploy:
+  - npm run build:package
+  - cd package
+deploy:
+  provider: npm
+  email: jenkins-reform@HMCTS.NET
+  skip_cleanup: true
+  api_key:
+    secure: xXZE6qPxydFSeXmUVkAeiD/gJyWz8uPzp3AZ6jlAcN9c7aMPOrACyY4mVwC8HIoSmbhZo+rxxYZ0BwYs2zcXnBAVZZmVRGqbHQMrz2vqsQCdkW8/gqH7A/iiEIHBeWeisYsLHTTbl5tp/pLnkXrA/P2DOXKwT0iCem8QegkaRwbGComSWbX5hvrkBs/BQQZnnpr7kcNfBLwFquEJaEzSeXAH8C6L5vvc9fTrJkYNQFnuzUVQtDGFzW76IyZsBnacdFqPWT2H2bcQ5qRSU9m8Z71v+jkAXfhCjt+JGgGossEN7EiTJ8s9Wg9NAqdvk4Bb6OjHU3yvnFQOszp7YPvNvO3KCxUyzgR2cSaXu4jAgcSkTsrtoCk0GagOFT5tqU9sWN+OX3sQef92Pr3N5wBr2tSm61ixcyCbUeNv379lGg3MQaqh21C54gu18Jd8yfqlWlZJmvmiQDAn8Nq1cKJSnWbIUHkxw0BBXUcpJAl+wZ8Tpko3d9Xbl49wUiT0KoZ0qSao+VX9kKT1QMoGRRxoQ9oYiL/kAfyIFfKXxzka/qFmseg6MVvIGOGU/BOT8m1uJN/3TQoiwN7lLq+nh6laJRKeb/5Jw+Yxvn6EnAdA5uUT/6EZWmOp2/SfFWHk/bG0q2xg5kuUPFAgnoD3RjckaMxC03qpbRgYcKs33uI4Yvw=
+  on:
+    tags: true
+    repo: hmcts/frontend
