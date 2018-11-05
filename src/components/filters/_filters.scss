@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .hmcts-filter {
+  background-color: govuk-colour("white");
   box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
 }
 
@@ -26,14 +27,64 @@
 }
 
 
+// JavaScript
+.hmcts-filter__legend {
+  overflow: visible; // Override govuk to allow for focus style to be seen
+  width: 100%;
+
+  button {
+    @include govuk-font($size: 24, $weight: bold);
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 0 none;
+    cursor: pointer; // Adam would not approve
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    -webkit-appearance: none;
+
+    // Fix unwanted button padding in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    &::after {
+      background-image: url(#{$hmcts-images-path}icon-toggle-plus-minus.svg);
+      background-position: 0 0;
+      content: "";
+      display: block;
+      height: 16px;
+      margin-top: -8px; // Half the height of the icon
+      position: absolute; top: 50%; right: 0;
+      width: 16px;
+    }
+
+    &[aria-expanded="true"] {
+      &::after {
+        background-position: 16px 16px;
+      }
+    }
+
+    &:focus {
+      @include govuk-focusable;
+    }
+
+  }
+
+}
+
+
 .hmcts-filter__header-title,
 .hmcts-filter__header-action {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
 }
-
-
 
 
 .hmcts-filter__close {
@@ -65,7 +116,6 @@
     }
 
   }
-
 
 
 .hmcts-filter__close {

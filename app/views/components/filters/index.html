@@ -5,14 +5,14 @@
   <h1 class="govuk-heading-l">Filter</h1>
 
   {% set filterOptionsHtml %}
+
     {{ govukCheckboxes({
       idPrefix: 'categories',
       name: 'categories',
       fieldset: {
         legend: {
-          text: 'Categories',
-          isPageHeading: true,
-          classes: 'govuk-fieldset__legend--m'
+          html: 'Categories',
+          classes: 'hmcts-filter__legend govuk-fieldset__legend--m'
         }
       },
       items: [
@@ -38,9 +38,8 @@
       name: 'typeofperson',
       fieldset: {
         legend: {
-          text: 'Type of person',
-          isPageHeading: true,
-          classes: 'govuk-fieldset__legend--m'
+          html: 'Type of person',
+          classes: 'hmcts-filter__legend govuk-fieldset__legend--m'
         }
       },
       items: [
@@ -78,6 +77,7 @@
         }
       ]
     }) }}
+
   {% endset %}
 
   {{ hmctsFilters({
