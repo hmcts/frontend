@@ -14,13 +14,11 @@ team](mailto:design-system@hmcts.net).
 
 ## Quick start
 
-There are 2 ways to start using HMCTS Frontend in your app.
-
 Once installed, you will be able to use the code from the examples in the
 [HMCTS Design System](https://hmcts-design-system.herokuapp.com/)
 in your service.
 
-### 1. Install with npm (recommended)
+### Install with npm (recommended)
 
 We recommend [installing HMCTS Frontend using node package manager
 (npm)](docs/installation/installing-with-npm.md).
