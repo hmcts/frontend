@@ -31,15 +31,11 @@
 - `package/` **contains auto-generated files**
 
   package published on npm.
-  Consume all of govuk-frontend through a single package.
+  Consume all of hmcts-frontend through a single package.
 
 - `src/`
 
   Source files. See README.md in the src directory for details.
-
-- `tasks/`
-
-  Application modules and helpers. See [tasks](tasks.md) for more information about the tasks.
 
 
 ### Auto-generated directories
