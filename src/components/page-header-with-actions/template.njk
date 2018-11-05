@@ -1,25 +1,3 @@
-{# {%- from "button/macro.njk" import govukButton %}
-
-<div class="hmcts-page-heading {{- ' ' + params.classes if params.classes}}">
-
-  <div class="hmcts-page-heading__title">
-    <h1 class="govuk-heading-xl">{{ params.title.html | safe if params.title.html else params.title.text }}</h1>
-  </div>
-
-  {% if params.items %}
-    <div class="hmcts-page-heading__actions">
-      {% for item in params.items %}
-        {{ govukButton({
-          classes: 'hmcts-page-heading__action ' + (item.classes if item.classes),
-          text: item.text,
-          href: item.href
-        }) }}
-      {% endfor %}
-    </div>
-  {% endif %}
-
-</div> #}
-
 {%- from "menu/macro.njk" import hmctsMenu %}
 
 <div class="hmcts-page-heading {{- ' ' + params.classes if params.classes}}">

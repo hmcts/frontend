@@ -16,8 +16,11 @@
 .hmcts-page-heading__title {
 
   [class^=govuk-heading-] {
-    margin-bottom: 0;
+    margin-bottom: govuk-spacing(2);
     text-align: left;
+    @include mq($from: tablet) {
+      margin-bottom: 0;
+    }
   }
 
   @include mq($from: tablet) {
@@ -38,11 +41,14 @@
 }
 
 .hmcts-page-heading__action {
-  margin-bottom: 0;
-  margin-top: govuk-spacing(2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include mq($from: tablet) {
-    margin-top: 0;
+    margin-bottom: 0;
   }
 
 }
+
