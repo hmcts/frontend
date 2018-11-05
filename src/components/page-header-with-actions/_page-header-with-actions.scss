@@ -37,17 +37,9 @@
 
 }
 
-
 .hmcts-page-heading__action {
-  display: inline-block;
   margin-bottom: 0;
-  margin-right: govuk-spacing(2);
   margin-top: govuk-spacing(2);
-  width: auto; // Override GDS’s 100% width
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   @include mq($from: tablet) {
     margin-top: 0;
