@@ -33,6 +33,21 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.18-alpha
+
+🏠 Internal:
+
+- Page Header With Actions now uses Menu component
+- Details Bar now uses Menu component
+
+🆕 New features:
+
+- Collapsible filter styling/html added
+
+🔧 Fixes:
+
+- Filter without selected filters doesn't show extra grey space anymore.
+
 ## 0.0.17-alpha
 
 🆕 New features:

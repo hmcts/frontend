@@ -35,12 +35,14 @@ This should be incremented based on [Semantic versioning](https://semver.org/) f
   npm unlink ../@hmcts/frontend/package/
   ```
 
-9. Create a pull request and copy the changelog text.
+9. Push the branch to Github
+
+10. Create a pull request and copy the changelog text.
    When reviewing the PR, check that the version numbers have been updated and that the compiled assets use this version number.
 
-10. Once the pull request is approved, merge to **master**.
+11. Once the pull request is approved, merge to **master**.
 
-11. Create a release in the [Github interface](https://github.com/hmcts/frontend/releases/new)
+12. Create a release in the [Github interface](https://github.com/hmcts/frontend/releases/new)
   - select the latest tag version
   - set "HMCTS Frontend release v[version-number]" as the title
   - add release notes from changelog
