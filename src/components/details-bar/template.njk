@@ -1,4 +1,4 @@
-{%- from "button/macro.njk" import govukButton %}
+{%- from "menu/macro.njk" import hmctsMenu %}
 
 <div class="hmcts-details-bar {{- ' ' + params.classes if params.classes}}">
 
@@ -12,15 +12,9 @@
     </div>
 
     {% if params.items %}
-    <div class="hmcts-details-bar__actions">
-      {% for item in params.items %}
-        {{ govukButton({
-          classes: 'hmcts-details-bar__action ' + (item.classes if item.classes),
-          text: item.text,
-          href: item.href
-        }) }}
-      {% endfor %}
-    </div>
+      <div class="hmcts-details-bar__actions">
+        {{hmctsMenu({ items: params.items })}}
+      </div>
     {% endif %}
 
   </div>

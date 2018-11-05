@@ -65,17 +65,3 @@
   }
 
 }
-
-
-.hmcts-details-bar__action {
-  display: inline-block;
-  margin-right: govuk-spacing(2);
-  margin-bottom: govuk-spacing(2);
-  width: auto; // Override GDS’s 100% width
-
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-}
