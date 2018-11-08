@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h1 class="govuk-heading-l">Action bar</h1>
+
+  <div class="hmcts-action-bar">
+    <div class="hmcts-action-bar__filter">{{govukButton({ text: 'Filter button', classes: 'hmcts-button--secondary' })}}</div>
+
+    {{ hmctsMenu({
+      items: [{
+        text: 'Some button',
+        classes: 'hmcts-button--secondary'
+      }, {
+        text: 'Another button',
+        classes: 'hmcts-button--secondary'
+      }]
+    }) }}
+  </div>
+
+{% endblock %}
