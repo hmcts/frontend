@@ -33,6 +33,14 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.19-alpha
+
+🆕 New features:
+
+- Filter toggle button
+- Filter layout
+- Action bar (for filters)
+
 ## 0.0.18-alpha
 
 🏠 Internal:
