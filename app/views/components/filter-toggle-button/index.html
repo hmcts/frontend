@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h1 class="govuk-heading-l">Filter toggle button</h1>
+
+  <div class="toggle-button-container"></div>
+  <div class="filter-container">
+    <div class="close-button-container"></div>
+    Filters would be in here
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    new HMCTSFrontend.FilterToggleButton({
+      bigModeMediaQuery: '(min-width: 48.063em)',
+      startHidden: true,
+      toggleButton: {
+        container: $('.toggle-button-container'),
+        showText: 'Show filter',
+        hideText: 'Hide filter',
+        classes: 'hmcts-button--secondary'
+      },
+      closeButton: {
+        container: $('.close-button-container'),
+        text: 'Close'
+      },
+      filter: {
+        container: $('.filter-container')
+      }
+    });
+  </script>
+
+{% endblock %}
