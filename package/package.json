@@ -1,7 +1,7 @@
 {
   "name": "@hmcts/frontend",
   "description": "HMCTS Frontend contains the code you need to start building a user interface for HMCTS.",
-  "version": "0.0.18-alpha",
+  "version": "0.0.19-alpha",
   "main": "all.js",
   "sass": "all.scss",
   "engines": {
