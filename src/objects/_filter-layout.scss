@@ -27,7 +27,6 @@
 }
 
 .hmcts-filter-layout__content {
-  // @include govuk-clearfix;
-  // width: 100%;
   overflow: hidden;
+  overflow-x: auto;
 }
