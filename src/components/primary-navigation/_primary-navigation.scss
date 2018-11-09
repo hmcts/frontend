@@ -9,8 +9,22 @@
 
 .hmcts-primary-navigation__container {
   @include hmcts-width-container;
-  @include govuk-clearfix;
-  position: relative;
+  // @include govuk-clearfix;
+  // position: relative;
+
+  font-size: .1px; /* Hide whitespace between elements */
+  text-align: justify; /* Trick to remove the need for floats */
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.hmcts-primary-navigation__items {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -73,4 +87,17 @@
 
   }
 
+}
+
+.hmcts-primary-navigation__search {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.js-enabled .hmcts-search {
+  display: none;
+}
+
+.js-enabled .hmcts-search--showing {
+  display: block;
 }
