@@ -33,6 +33,13 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.20-alpha
+
+🆕 New features:
+
+- hmcts-hidden class and mixin
+- hmcts-scrollable-pane class
+
 ## 0.0.19-alpha
 
 🆕 New features:
