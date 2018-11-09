@@ -61,13 +61,13 @@ HMCTSFrontend.FilterToggleButton.prototype.removeCloseButton = function() {
 
 HMCTSFrontend.FilterToggleButton.prototype.hideMenu = function() {
   this.menuButton.attr('aria-expanded', 'false');
-  this.options.filter.container.hide();
+  this.options.filter.container.addClass('hmcts-hidden');
   this.menuButton.text(this.options.toggleButton.showText);
 };
 
 HMCTSFrontend.FilterToggleButton.prototype.showMenu = function() {
   this.menuButton.attr('aria-expanded', 'true');
-  this.options.filter.container.show();
+  this.options.filter.container.removeClass('hmcts-hidden');
   this.menuButton.text(this.options.toggleButton.hideText);
 };
 
