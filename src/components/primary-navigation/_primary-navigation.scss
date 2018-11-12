@@ -1,7 +1,3 @@
-/* ==========================================================================
-   #PRIMARY NAV
-   ========================================================================== */
-
 .hmcts-primary-navigation {
   background-color: govuk-colour("black");
 }
@@ -9,7 +5,6 @@
 
 .hmcts-primary-navigation__container {
   @include hmcts-width-container;
-
   font-size: 0; // Hide whitespace between elements
   text-align: justify; // Trick to remove the need for floats
 
@@ -52,11 +47,10 @@
 }
 
 
-
 .hmcts-primary-navigation__link {
   display: block;
-  padding-top: 12px;
   padding-bottom: 13px;
+  padding-top: 12px;
   text-decoration: underline;
 
   &:link,
@@ -79,8 +73,8 @@
       background-color: govuk-colour("white");
       content: "";
       display: block;
-      position: absolute; bottom: 0; left: 0;
       height: 5px;
+      position: absolute; bottom: 0; left: 0;
       width: 100%;
     }
 
@@ -97,7 +91,6 @@
   }
 
 }
-
 
 
 /*
@@ -135,8 +128,7 @@
 }
 
 
-
-.hmcts-search-toggle-button {
+.hmcts-search-toggle__button {
   @include govuk-font($size: 19, $weight: bold);
   color: govuk-colour(white);
   -webkit-font-smoothing: antialiased;
@@ -212,9 +204,47 @@
   }
 }
 
+
+
 .hmcts-search--inline {
   padding: govuk-spacing(2) 0 !important;
   @include govuk-media-query($from: desktop) {
     padding: 0 !important;
   }
+}
+
+
+.hmcts-search--toggle {
+
+  @include govuk-media-query($until: desktop) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+
+// JS enabled
+.js-enabled .hmcts-search--toggle {
+
+  @include govuk-media-query($until: desktop) {
+    padding-top: 0 !important;
+  }
+
+}
+
+.js-enabled .hmcts-search-toggle {
+  position: relative;
+}
+
+.js-enabled .hmcts-search-toggle__search {
+
+  @include govuk-media-query($from: desktop) {
+    max-width: 450px;
+    position: absolute;
+    right: -15px;
+    top: 50px; // Height of nav bar
+    width: 450px;
+  }
+
 }

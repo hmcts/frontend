@@ -11,6 +11,13 @@
   vertical-align: top;
 }
 
+
+.hmcts-search__label,
+.hmcts-search__hint {
+  text-align: left;
+}
+
+
 .hmcts-search__input:focus {
   position: relative;
   z-index: 1;

@@ -10,7 +10,7 @@
         name: 'search1'
       },
       label: {
-        text: 'A label goes here',
+        text: 'Search',
         classes: 'govuk-visually-hidden'
       },
       button: {
@@ -20,47 +20,31 @@
   {% endset %}
 
   {% set toggleSearchHtml %}
-    <div class="hmcts-search-toggle"></div>
-    <div class="the overlay">
-      {{ hmctsSearch({
-        classes: 'hmcts-search--ondark hmcts-hidden',
-        input: {
-          id: 'search2',
-          name: 'search2'
-        },
-        label: {
-          text: 'A label goes here',
-          classes: 'govuk-visually-hidden'
-        },
-        button: {
-          text: 'Search'
-        }
-      }) }}
+    <div class="hmcts-search-toggle">
+      <div class="hmcts-search-toggle__toggle"></div>
+      <div class="hmcts-search-toggle__search">
+        {{ hmctsSearch({
+          classes: 'hmcts-search--ondark hmcts-search--toggle hmcts-hidden',
+          input: {
+            id: 'search2',
+            name: 'search2'
+          },
+          label: {
+            classes: 'govuk-visually-hidden',
+            text: 'Search'
+          },
+          hint: {
+            text: 'Enter case number, for example 123456'
+          },
+          button: {
+            text: 'Search'
+          }
+        }) }}
+      </div>
     </div>
   {% endset %}
 
   <h1 class="govuk-heading-xl">Primary navigation</h1>
-
-
-
-  <h2 class="govuk-heading-m">With toggle search</h2>
-
-  {{ hmctsPrimaryNavigation({
-    label: 'Primary navigation',
-    items: [{
-      text: 'Nav item 1',
-      href: '#1',
-      active: true
-    }, {
-      text: 'Nav item 2',
-      href: '#2'
-    }, {
-      text: 'Nav item 3',
-      href: '#3'
-    }]
-  }) }}
-
-  <br><br>
 
   <h2 class="govuk-heading-m">Just navigation</h2>
 
@@ -118,21 +102,6 @@
     }],
     searchHtml: toggleSearchHtml
   }) }}
-  <!-- <div class="hmcts-search-container">
-    <div class="hmcts-search-container__wrapper">
-      <div class="hmcts-search-container__inner-wrapper">
-        {{hmctsSearch({
-          classes: 'hmcts-search--ondark hmcts-hidden',
-          label: {
-            text: 'Enter case number, for example 123456'
-          },
-          button: {
-            text: 'Search'
-          }
-        })}}
-      </div>
-    </div>
-  </div> -->
 
 {% endblock %}
 
@@ -140,7 +109,7 @@
   <script>
     new HMCTSFrontend.SearchToggleButton({
       toggleButton: {
-        container: $('.hmcts-search-toggle'),
+        container: $('.hmcts-search-toggle__toggle'),
         text: 'Search for case'
       },
       search: {
