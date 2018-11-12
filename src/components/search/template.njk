@@ -1,0 +1,30 @@
+{%- from "input/macro.njk" import govukInput %}
+{%- from "button/macro.njk" import govukButton %}
+
+
+
+<div class="hmcts-search">
+
+  {{ govukInput({
+    classes: "hmcts-search__input--ondark",
+    label: {
+      text: "Search"
+    },
+    id: "name",
+    name: "name"
+  }) }}
+
+  {{ govukButton({
+    classes: 'hmcts-search__button',
+    text: 'Search'
+  }) }}
+
+
+  {# <div class="form-group">
+    <label class="govuk-visually-hidden">Search</label>
+    <input class="hmcts-search__input govuk-input" type="search" id="search" name="search" value="">
+  </div>
+
+  <button class="hmcts-search__button govuk-button" type="submit">Search</button> #}
+
+</div>
