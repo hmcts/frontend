@@ -1,14 +1,82 @@
 {%- from "input/macro.njk" import govukInput %}
 {%- from "button/macro.njk" import govukButton %}
 
+<div class="hmcts-search hmcts-search--ondark">
 
+  {{ govukInput({
+    classes: "hmcts-search__input hmcts-search__input--ondark",
+    label: {
+      classes: "hmcts-search__label--ondark",
+      text: "Search"
+    },
+    hint: {
+      classes: "hmcts-search__input hmcts-search__hint--ondark",
+      text: "Enter case number, for example 123456"
+    },
+    id: "name",
+    name: "name"
+  }) }}
+
+  {{ govukButton({
+    classes: 'hmcts-search__button hmcts-search__button--ondark',
+    text: 'Search'
+  }) }}
+
+</div>
+
+<br></br>
+
+<div class="hmcts-search hmcts-search--ondark">
+
+  {{ govukInput({
+    classes: "hmcts-search__input hmcts-search__input--ondark",
+    label: {
+      classes: "hmcts-search__label--ondark",
+      text: "Search"
+    },
+    id: "name",
+    name: "name"
+  }) }}
+
+  {{ govukButton({
+    classes: 'hmcts-search__button hmcts-search__button--ondark',
+    text: 'Search'
+  }) }}
+
+</div>
+
+<br></br>
+
+<div class="hmcts-search hmcts-search--ondark">
+
+  {{ govukInput({
+    classes: "hmcts-search__input hmcts-search__input--ondark",
+    label: {
+      classes: "govuk-visually-hidden",
+      text: "Search"
+    },
+    id: "name",
+    name: "name"
+  }) }}
+
+  {{ govukButton({
+    classes: 'hmcts-search__button hmcts-search__button--ondark',
+    text: 'Search'
+  }) }}
+
+</div>
+
+<br><br>
 
 <div class="hmcts-search">
 
   {{ govukInput({
-    classes: "hmcts-search__input--ondark",
     label: {
+      classes: "hmcts-search__input",
       text: "Search"
+    },
+    hint: {
+      text: "Enter case number, for example 123456"
     },
     id: "name",
     name: "name"
@@ -18,13 +86,5 @@
     classes: 'hmcts-search__button',
     text: 'Search'
   }) }}
-
-
-  {# <div class="form-group">
-    <label class="govuk-visually-hidden">Search</label>
-    <input class="hmcts-search__input govuk-input" type="search" id="search" name="search" value="">
-  </div>
-
-  <button class="hmcts-search__button govuk-button" type="submit">Search</button> #}
 
 </div>

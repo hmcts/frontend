@@ -24,6 +24,25 @@
 
   <br><br>
 
+  <h2 class="govuk-heading-m">Just navigation</h2>
+
+  {{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+      text: 'Nav item 1',
+      href: '#1',
+      active: true
+    }, {
+      text: 'Nav item 2',
+      href: '#2'
+    }, {
+      text: 'Nav item 3',
+      href: '#3'
+    }]
+  }) }}
+
+  <br><br>
+
   <h2 class="govuk-heading-m">With toggle search</h2>
 
   {{ hmctsPrimaryNavigation({
@@ -44,30 +63,24 @@
   <div class="hmcts-search-container">
     <div class="hmcts-search-container__wrapper">
       <div class="hmcts-search-container__inner-wrapper">
-        <div class="hmcts-search hmcts-hidden">
-          <input type="text">Hello
+        <div class="hmcts-search hmcts-search--ondark hmcts-hidden">
+          {{ govukInput({
+            classes: "hmcts-search__input hmcts-search__input--ondark",
+            label: {
+              classes: "govuk-visually-hidden",
+              text: "Search"
+            },
+            id: "name",
+            name: "name"
+          }) }}
+          {{ govukButton({
+            classes: 'hmcts-search__button hmcts-search__button--ondark',
+            text: 'Search'
+          }) }}
         </div>
       </div>
     </div>
   </div>
-
-  <br><br>
-  <h2 class="govuk-heading-m">Just navigation</h2>
-
-  {{ hmctsPrimaryNavigation({
-    label: 'Primary navigation',
-    items: [{
-      text: 'Nav item 1',
-      href: '#1',
-      active: true
-    }, {
-      text: 'Nav item 2',
-      href: '#2'
-    }, {
-      text: 'Nav item 3',
-      href: '#3'
-    }]
-  }) }}
 
 {% endblock %}
 
