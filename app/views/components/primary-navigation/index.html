@@ -2,15 +2,12 @@
 
 {% block body %}
 
-  <h1 class="govuk-heading-xl">Primary navigation</h1>
-
   {% set inlineSearchHtml %}
-
     {{ hmctsSearch({
       classes: 'hmcts-search--ondark hmcts-search--inline',
       input: {
-        id: 'trevor',
-        name: 'trevor'
+        id: 'search1',
+        name: 'search1'
       },
       label: {
         text: 'A label goes here',
@@ -21,6 +18,30 @@
       }
     }) }}
   {% endset %}
+
+  {% set toggleSearchHtml %}
+    <div class="hmcts-search-toggle"></div>
+    <div class="the overlay">
+      {{ hmctsSearch({
+        classes: 'hmcts-search--ondark hmcts-hidden',
+        input: {
+          id: 'search2',
+          name: 'search2'
+        },
+        label: {
+          text: 'A label goes here',
+          classes: 'govuk-visually-hidden'
+        },
+        button: {
+          text: 'Search'
+        }
+      }) }}
+    </div>
+  {% endset %}
+
+  <h1 class="govuk-heading-xl">Primary navigation</h1>
+
+
 
   <h2 class="govuk-heading-m">With toggle search</h2>
 
@@ -95,9 +116,9 @@
       text: 'Nav item 3',
       href: '#3'
     }],
-    searchHtml: '<div class="hmcts-search-toggle"></div>'
+    searchHtml: toggleSearchHtml
   }) }}
-  <div class="hmcts-search-container">
+  <!-- <div class="hmcts-search-container">
     <div class="hmcts-search-container__wrapper">
       <div class="hmcts-search-container__inner-wrapper">
         {{hmctsSearch({
@@ -111,7 +132,7 @@
         })}}
       </div>
     </div>
-  </div>
+  </div> -->
 
 {% endblock %}
 
