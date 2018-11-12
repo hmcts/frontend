@@ -60,6 +60,26 @@
 
   <br><br>
 
+  <h2 class="govuk-heading-m">Inline search</h2>
+
+  {{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+      text: 'Nav item 1',
+      href: '#1',
+      active: true
+    }, {
+      text: 'Nav item 2',
+      href: '#2'
+    }, {
+      text: 'Nav item 3',
+      href: '#3'
+    }],
+    searchHtml: inlineSearchHtml
+  }) }}
+
+  <br><br>
+
   <h2 class="govuk-heading-m">With toggle search</h2>
 
   {{ hmctsPrimaryNavigation({
@@ -80,49 +100,18 @@
   <div class="hmcts-search-container">
     <div class="hmcts-search-container__wrapper">
       <div class="hmcts-search-container__inner-wrapper">
-        <div class="hmcts-search hmcts-search--ondark hmcts-hidden hmcts-search-container__search">
-          {{ govukInput({
-            classes: "hmcts-search__input hmcts-search__input--ondark",
-            label: {
-              classes: "govuk-visually-hidden",
-              text: "Search"
-            },
-            hint: {
-              classes: "hmcts-search__label--ondark",
-              text: "Enter case number, for example 123456"
-            },
-            type: "search",
-            id: "name",
-            name: "name"
-          }) }}
-          {{ govukButton({
-            classes: "hmcts-search__button hmcts-search__button--ondark",
-            text: "Search"
-          }) }}
-        </div>
+        {{hmctsSearch({
+          classes: 'hmcts-search--ondark hmcts-hidden',
+          label: {
+            text: 'Enter case number, for example 123456'
+          },
+          button: {
+            text: 'Search'
+          }
+        })}}
       </div>
     </div>
   </div>
-
-  <br><br>
-
-  <h2 class="govuk-heading-m">Inline search</h2>
-
-  {{ hmctsPrimaryNavigation({
-    label: 'Primary navigation',
-    items: [{
-      text: 'Nav item 1',
-      href: '#1',
-      active: true
-    }, {
-      text: 'Nav item 2',
-      href: '#2'
-    }, {
-      text: 'Nav item 3',
-      href: '#3'
-    }],
-    searchHtml: inlineSearchHtml
-  }) }}
 
 {% endblock %}
 
@@ -134,7 +123,7 @@
         text: 'Search for case'
       },
       search: {
-        container: $('.hmcts-search')
+        container: $('.hmcts-search').last()
       }
 
     })

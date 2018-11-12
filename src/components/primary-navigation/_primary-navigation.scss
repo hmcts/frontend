@@ -9,22 +9,21 @@
 
 .hmcts-primary-navigation__container {
   @include hmcts-width-container;
-  // @include govuk-clearfix;
-  // position: relative;
 
-  font-size: 0; /* Hide whitespace between elements */
-  text-align: justify; /* Trick to remove the need for floats */
+  font-size: 0; // Hide whitespace between elements
+  text-align: justify; // Trick to remove the need for floats
 
   &:after {
     content: '';
     display: inline-block;
     width: 100%;
   }
+
 }
 
 .hmcts-primary-navigation__items {
   text-align: left;
-  @include mq($from: tablet) {
+  @include mq($from: desktop) {
     display: inline-block;
     vertical-align: middle;
   }
@@ -49,13 +48,15 @@
   &:last-child {
     margin-right: 0;
   }
+
 }
+
 
 
 .hmcts-primary-navigation__link {
   display: block;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 13px;
   text-decoration: underline;
 
   &:link,
@@ -66,9 +67,37 @@
   &:focus {
     color: govuk-colour("black"); // Focus colour on yellow should really be black.
     position: relative; // Ensure focus sits above everything else.
+    z-index: 1;
+  }
+
+  &[aria-current] {
+    color: govuk-colour(white);
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+      background-color: govuk-colour("white");
+      content: "";
+      display: block;
+      position: absolute; bottom: 0; left: 0;
+      height: 5px;
+      width: 100%;
+    }
+
+    &:focus {
+      color: govuk-colour("black"); // Focus colour on yellow should really be black.
+      position: relative; // Ensure focus sits above everything else.
+
+      &:before {
+        background-color: govuk-colour("black");
+      }
+
+    }
+
   }
 
 }
+
 
 
 /*
@@ -96,40 +125,16 @@
 */
 
 
-.hmcts-primary-navigation__link[aria-current] {
-  color: govuk-colour(white);
-  position: relative;
-  text-decoration: none;
-
-  &:before {
-    background-color: govuk-colour("white");
-    content: "";
-    display: block;
-    position: absolute; bottom: 0; left: 0;
-    height: 5px;
-    width: 100%;
-  }
-
-  &:focus {
-    color: govuk-colour("black"); // Focus colour on yellow should really be black.
-    position: relative; // Ensure focus sits above everything else.
-
-    &:before {
-      background-color: govuk-colour("black");
-    }
-
-  }
-
-}
-
 .hmcts-primary-navigation__search {
 
-  @include mq($from: tablet) {
+  @include mq($from: desktop) {
     display: inline-block;
     vertical-align: middle;
   }
 
 }
+
+
 
 .hmcts-search-toggle-button {
   @include govuk-font($size: 19, $weight: bold);
@@ -140,7 +145,12 @@
   -webkit-appearance: none;
   background-color: govuk-colour(black);
   border: none;
-  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 13px;
+
+  padding-left: 0;
+  padding-right: 0;
+
   &:after {
     background-repeat: no-repeat;
     background-image: url(#{$hmcts-images-path}icon-search-white.svg);
@@ -154,8 +164,13 @@
 
   &:focus {
     @include govuk-focusable;
+    position: relative;
+    z-index: 1;
   }
+
 }
+
+
 
 
 .hmcts-search-container {
@@ -199,7 +214,7 @@
 
 .hmcts-search--inline {
   padding: govuk-spacing(2) 0 !important;
-  @include govuk-media-query($from: tablet) {
+  @include govuk-media-query($from: desktop) {
     padding: 0 !important;
   }
 }
