@@ -23,8 +23,12 @@
 }
 
 .hmcts-primary-navigation__items {
-  display: inline-block;
-  vertical-align: middle;
+
+  @include mq($from: tablet) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
 }
 
 
@@ -90,14 +94,107 @@
 }
 
 .hmcts-primary-navigation__search {
+  margin-top: govuk-spacing(4);
+  margin-bottom: govuk-spacing(2);
+  @include mq($from: tablet) {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.hmcts-search-toggle-button {
+  @include govuk-font($size: 19, $weight: bold);
+  color: govuk-colour(white);
+  -webkit-font-smoothing: antialiased;
   display: inline-block;
-  vertical-align: middle;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background-color: govuk-colour(black);
+  border: none;
+  padding: 0;
+  &:after {
+    background-repeat: no-repeat;
+    background-image: url(#{$hmcts-images-path}icon-search-white.svg);
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-left: govuk-spacing(2);
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    color: govuk-colour(grey-3);
+  }
+
+  &:focus {
+    @include govuk-focusable;
+  }
 }
 
-.js-enabled .hmcts-search {
-  display: none;
+.hmcts-search-container {
+  background-color: govuk-colour(black);
+  @include govuk-media-query($from: tablet) {
+    background-color: none;
+  }
 }
 
-.js-enabled .hmcts-search--showing {
-  display: block;
+.js-enabled .hmcts-search-container {
+  position: relative;
 }
+
+.js-enabled .hmcts-search-container__wrapper {
+  position: absolute;
+  background-color: govuk-colour(black);
+  @include govuk-media-query($until: tablet) {
+    width: 100%;
+  }
+  @include govuk-media-query($from: tablet) {
+    @include hmcts-width-container();
+    // left: 0;
+    // right: 0;
+    position: relative;
+  }
+}
+
+.js-enabled .hmcts-search-container__inner-wrapper {
+  @include govuk-media-query($from: tablet) {
+    width: 340px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.hmcts-search {
+  padding: 15px;
+  background-color: govuk-colour(black);
+}
+
+
+// .js-enabled .hmcts-search-wrapper .hmcts-width-container {
+//   position: relative;
+
+// }
+
+// .js-enabled .hmcts-search {
+//   @include mq($until: tablet) {
+//     @include hmcts-width-container(960);
+//   }
+
+//   padding: 10px 0;
+
+
+//   background-color: govuk-colour(black);
+//   position: absolute;
+//   width: 100%:
+//   top: 0;
+//   left: 0;
+//   @include mq($from: tablet) {
+//     padding: 10px;
+//     right: 0;
+//     width: 340px;
+//   }
+// }
