@@ -1,29 +1,38 @@
 {%- from "input/macro.njk" import govukInput %}
 {%- from "button/macro.njk" import govukButton %}
 
-<div class="hmcts-search hmcts-search--ondark">
+<div class="hmcts-search {{- ' ' + params.classes if params.classes}}">
+
+  {% if params.hint %}
+    {% set hintClasses = 'hmcts-search__hint ' + (params.hint.classes if params.hint.classes) %}
+    {% set hintText = params.hint.text %}
+    {% set hint = { classes: hintClasses, text: hintText } %}
+  {% endif %}
+
 
   {{ govukInput({
-    classes: "hmcts-search__input hmcts-search__input--ondark",
+    classes: 'hmcts-search__input ' + (params.input.classes if params.input.classes),
     label: {
-      classes: "hmcts-search__label--ondark",
-      text: "Search"
+      classes: 'hmcts-search__label ' + (params.label.classes if params.label.classes),
+      text: params.label.text
     },
-    hint: {
-      classes: "hmcts-search__input hmcts-search__hint--ondark",
-      text: "Enter case number, for example 123456"
-    },
-    id: "name",
-    name: "name"
+    hint: hint,
+    id: params.input.id,
+    name: params.input.name
   }) }}
 
   {{ govukButton({
-    classes: 'hmcts-search__button hmcts-search__button--ondark',
-    text: 'Search'
+    classes: 'hmcts-search__button ' + (params.button.classes if params.button.classes),
+    text: params.button.text
   }) }}
 
 </div>
 
+
+
+
+
+{#
 <br></br>
 
 <div class="hmcts-search hmcts-search--ondark">
@@ -87,4 +96,4 @@
     text: 'Search'
   }) }}
 
-</div>
+</div> #}

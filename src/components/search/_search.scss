@@ -37,18 +37,18 @@
   padding: govuk-spacing(3);
 }
 
-.hmcts-search__input--ondark {
-  border-color: govuk-colour("white");
-}
-
-.hmcts-search__label--ondark {
+.hmcts-search--ondark .hmcts-search__label {
   color: govuk-colour("white");
 }
 
-.hmcts-search__hint--ondark {
+.hmcts-search--ondark .hmcts-search__hint {
   color: govuk-colour("grey-2");
 }
 
-.hmcts-search__button--ondark {
+.hmcts-search--ondark .hmcts-search__input {
+  border-color: govuk-colour("white");
+}
+
+.hmcts-search--ondark .hmcts-search__button {
   margin-left: 0;
 }

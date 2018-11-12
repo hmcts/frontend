@@ -4,6 +4,56 @@
 
   <h1 class="govuk-heading-l">Search</h1>
 
-  {{ hmctsSearch() }}
+  {{ hmctsSearch({
+    classes: 'hmcts-search--ondark',
+    input: {
+      id: 'adam',
+      name: 'adam'
+    },
+    label: {
+      text: 'A label goes here'
+    },
+    hint: {
+      text: 'A hint goes here'
+    },
+    button: {
+      text: 'Search for case'
+    }
+  }) }}
+
+  <br><br>
+
+  {{ hmctsSearch({
+    classes: 'hmcts-search--ondark',
+    input: {
+      id: 'trevor',
+      name: 'trevor'
+    },
+    label: {
+      text: 'A label goes here',
+      classes: 'govuk-visually-hidden'
+    },
+    button: {
+      text: 'Search for case'
+    }
+  }) }}
+
+  <br><br>
+
+  {{ hmctsSearch({
+    input: {
+      id: 'bill',
+      name: 'bill'
+    },
+    label: {
+      text: 'A label goes here'
+    },
+    hint: {
+      text: 'A hint goes here'
+    },
+    button: {
+      text: 'Search for case'
+    }
+  }) }}
 
 {% endblock %}

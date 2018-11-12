@@ -5,22 +5,21 @@
   <h1 class="govuk-heading-xl">Primary navigation</h1>
 
   {% set inlineSearchHtml %}
-    <div class="hmcts-search hmcts-search-container__search">
-      {{ govukInput({
-        classes: "hmcts-search__input hmcts-search__input--ondark",
-        label: {
-          classes: "govuk-visually-hidden",
-          text: "Search"
-        },
-        type: "search",
-        id: "inline-search",
-        name: "inline-search"
-      }) }}
-      {{ govukButton({
-        classes: "hmcts-search__button hmcts-search__button--ondark",
-        text: "Search"
-      }) }}
-    </div>
+
+    {{ hmctsSearch({
+      classes: 'hmcts-search--ondark hmcts-search--inline',
+      input: {
+        id: 'trevor',
+        name: 'trevor'
+      },
+      label: {
+        text: 'A label goes here',
+        classes: 'govuk-visually-hidden'
+      },
+      button: {
+        text: 'Search'
+      }
+    }) }}
   {% endset %}
 
   <h2 class="govuk-heading-m">With toggle search</h2>
