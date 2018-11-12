@@ -1,0 +1,54 @@
+.hmcts-search {
+  align-items: flex-end;
+  display: flex;
+  font-size: 0; // Fallback
+}
+
+.hmcts-search .govuk-form-group {
+  display: inline-block;
+  flex: 1;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+.hmcts-search__input:focus {
+  position: relative;
+  z-index: 1;
+}
+
+.hmcts-search__button {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: govuk-spacing(2);
+  position: relative;
+  top: -2px; // Override default gov properties due to active pixel movement
+  vertical-align: top;
+  width: auto;
+
+  &:active {
+    top: -2px;
+  }
+
+}
+
+// Modifiers
+.hmcts-search--ondark {
+  background-color: govuk-colour("black");
+  padding: govuk-spacing(3);
+}
+
+.hmcts-search__input--ondark {
+  border-color: govuk-colour("white");
+}
+
+.hmcts-search__label--ondark {
+  color: govuk-colour("white");
+}
+
+.hmcts-search__hint--ondark {
+  color: govuk-colour("grey-2");
+}
+
+.hmcts-search__button--ondark {
+  margin-left: 0;
+}
