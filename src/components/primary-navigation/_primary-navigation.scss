@@ -12,7 +12,7 @@
   // @include govuk-clearfix;
   // position: relative;
 
-  font-size: .1px; /* Hide whitespace between elements */
+  font-size: 0; /* Hide whitespace between elements */
   text-align: justify; /* Trick to remove the need for floats */
 
   &:after {
@@ -23,7 +23,7 @@
 }
 
 .hmcts-primary-navigation__items {
-
+  text-align: left;
   @include mq($from: tablet) {
     display: inline-block;
     vertical-align: middle;
@@ -45,6 +45,10 @@
   display: inline-block;
   margin-right: govuk-spacing(4);
   margin-top: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 
