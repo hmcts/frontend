@@ -5,7 +5,7 @@
 .hmcts-alert {
   border: 5px solid govuk-colour("blue");
   color: govuk-colour("blue");
-  font-size: .1px; // Removes white space when using inline-block on child element.
+  font-size: 0; // Removes white space when using inline-block on child element.
   margin-bottom: govuk-spacing(6);
   padding: govuk-spacing(2);
 }

@@ -8,7 +8,7 @@
 
 
 .hmcts-sub-navigation__list {
-  font-size: .1px; // Removes white space when using inline-block on child element.
+  font-size: 0; // Removes white space when using inline-block on child element.
   list-style: none;
   margin: 0;
   padding: 0;

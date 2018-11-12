@@ -11,7 +11,7 @@
 
 .hmcts-filter__header {
   background-color: govuk-colour("grey-3");
-  font-size: .1px; // Hide whitespace between elements
+  font-size: 0; // Hide whitespace between elements
   padding: govuk-spacing(2) govuk-spacing(4);
   text-align: justify; // Trick to remove the need for floats
 
@@ -138,7 +138,7 @@
 
 
 .hmcts-filter__selected-heading {
-  font-size: .1px; // Hide whitespace between elements
+  font-size: 0; // Hide whitespace between elements
   text-align: justify; // Trick to remove the need for floats
 
   &:after {
@@ -159,7 +159,7 @@
 
 
 .hmcts-filter-tags {
-  font-size: .1px;
+  font-size: 0;
   margin-bottom: govuk-spacing(4); // Needs to adjust to 15px on mobile
   padding-left: 0;
 
