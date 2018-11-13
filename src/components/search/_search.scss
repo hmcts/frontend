@@ -1,7 +1,10 @@
 .hmcts-search {
+  font-size: 0; // Fallback
+}
+
+.hmcts-search form {
   align-items: flex-end;
   display: flex;
-  font-size: 0; // Fallback
 }
 
 .hmcts-search .govuk-form-group {
