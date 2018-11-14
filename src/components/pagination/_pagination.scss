@@ -1,0 +1,27 @@
+.pagination__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination__item {
+  background-color: blue;
+  display: inline-block;
+
+  &--active {
+    background-color: red;
+  }
+
+}
+
+
+.pagination__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 25px;
+  height: 25px;
+  min-width: 25px;
+}
+
+
