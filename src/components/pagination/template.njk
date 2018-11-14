@@ -1,0 +1,26 @@
+<div class="hmcts-pagination {{- ' ' + params.classes if params.classes}}">
+
+  <div>
+    {% if params.previous %}
+      <a href="{{params.previous.href}}">{{params.previous.text}}</a>
+    {% endif %}
+
+    {% for item in params.items %}
+      {% if item.type == 'dots' %}
+        <span>...</span>
+      {% else %}
+        {% if item.selected %}
+          <span>{{item.text}}</span>
+        {% else %}
+          <a href="{{item.href}}">{{item.text}}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if params.next %}
+      <a href="{{params.next.href}}">{{params.next.text}}</a>
+    {% endif %}
+  </div>
+  <div>Showing {{params.startIndex}} to {{params.endIndex}} of {{params.resultCount}}</div>
+
+</div>
