@@ -2,14 +2,52 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include mq($from: desktop) {
+    margin-bottom: 0;
+  }
+
 }
 
 .pagination__item {
-  background-color: blue;
+  @include govuk-font(19);
   display: inline-block;
 
-  &--active {
-    background-color: red;
+  &--active,
+  &--hellip {
+    padding: 5px;
+    height: 25px;
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+}
+
+
+.pagination__item--prev .pagination__link {
+
+  &:before {
+    background-color: govuk-colour("black");
+    height: 11px;
+    width: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+
+.pagination__item--next .pagination__link {
+
+  &:after {
+    background-color: govuk-colour("black");
+    height: 11px;
+    width: 12px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
   }
 
 }
@@ -18,10 +56,17 @@
 .pagination__link {
   display: block;
   text-align: center;
+  padding: 5px;
   text-decoration: none;
-  line-height: 25px;
   height: 25px;
   min-width: 25px;
+
+  // Add visited
+
+  &:focus {
+    color: govuk-colour("black");
+  }
+
 }
 
 
