@@ -46,4 +46,42 @@
 
   </nav>
 
+  {{hmctsPagination({
+    classes: 'my-class',
+    startIndex: 10,
+    endIndex: 20,
+    resultCount: 256,
+
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+    next: {
+      text: 'Next',
+      href: ''
+    },
+    items: [{
+      text: '1',
+      href: '/page=1'
+    }, {
+      type: 'dots'
+    }, {
+      text: '5',
+      href: '/page=5'
+    }, {
+      text: '6',
+      href: '/page=6',
+      selected: true
+    }, {
+      text: '7',
+      href: '/page=7'
+    }, {
+      type: 'dots'
+    }, {
+      text: '10',
+      href: '/page=10'
+    }]
+  })}}
+
 {% endblock %}
+
