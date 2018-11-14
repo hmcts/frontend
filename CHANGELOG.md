@@ -33,6 +33,13 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.21-alpha
+
+🆕 New features:
+
+- Added search component
+- Added ability for primary navigation to encapsulate the search component in two ways (inline and toggle)
+
 ## 0.0.20-alpha
 
 🆕 New features:
