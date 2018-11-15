@@ -29,8 +29,9 @@ gulp.task('watch', (done) => {
 gulp.task('build:package', (done) => {
   runSequence(
     'build:clean',
-    'build:copy-files',
-    'build:javascript',
+    // 'build:copy-files',
+    // 'build:javascript',
+    // 'build:compress-images',
     done
   );
 });

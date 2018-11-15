@@ -4,10 +4,10 @@ const cache    = require('gulp-cache');
 
 
 // Compresses png, jpeg, gif, png and svg images
-gulp.task('compress-images', function() {
-  return gulp.src('src/assets/images/' + '**/*.+(png|jpg|jpeg|gif|svg)')
+gulp.task('build:compress-images', function() {
+  return gulp.src('package/assets/images/' + '**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(cache(imagemin({
     interlaced: true
   })))
-  .pipe(gulp.dest('src/assets/images/'));
+  .pipe(gulp.dest('package/assets/images/'));
 });

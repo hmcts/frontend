@@ -40,6 +40,7 @@ gulp.task('build:package', () => {
   runSequence(
     'build:clean',
     'build:copy-files',
-    'build:javascript'
+    'build:javascript',
+    'build:compress-images',
   );
 });
