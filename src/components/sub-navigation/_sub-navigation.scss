@@ -65,7 +65,7 @@
 }
 
 
-.hmcts-sub-navigation__link[aria-current] {
+.hmcts-sub-navigation__link[aria-current="page"] {
   color: govuk-colour(black);
   position: relative;
   text-decoration: none;
