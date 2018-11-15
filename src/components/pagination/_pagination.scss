@@ -1,12 +1,46 @@
+.hmcts-pagination {
+  text-align: center;
+
+  @include mq($from: desktop) {
+
+    // Alignment adjustments
+    margin-left: - govuk-spacing(1);
+    margin-right: - govuk-spacing(1);
+
+    // Hide whitespace between elements
+    font-size: 0;
+
+    // Trick to remove the need for floats
+    text-align: justify;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+}
+
+
 .hmcts-pagination__list {
   list-style: none;
   margin: 0;
   padding: 0;
-
   @include mq($from: desktop) {
+    display: inline-block;
     margin-bottom: 0;
+    vertical-align: middle;
   }
+}
 
+
+.hmcts-pagination__results {
+  @include mq($from: desktop) {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
 }
 
 
@@ -19,51 +53,76 @@
 .hmcts-pagination__item--active,
 .hmcts-pagination__item--dots {
   font-weight: bold;
-  padding: 5px;
   height: 25px;
-  min-width: 25px;
+  padding: govuk-spacing(1);
   text-align: center;
 }
 
 
-.hmcts-pagination__item--prev .hmcts-pagination__link {
+.hmcts-pagination__item--dots {
+  padding-left: 0;
+  padding-right: 0;
+}
 
-  &:before {
-    background-color: govuk-colour("black");
-    height: 11px;
-    width: 12px;
-    margin-right: 5px;
+
+.hmcts-pagination__item--prev .hmcts-pagination__link,
+.hmcts-pagination__item--next .hmcts-pagination__link {
+  &:before,
+  &:after {
+    background-image: url(#{$hmcts-images-path}icon-pagination.svg);
+    background-repeat: no-repeat;
+    background-size: 22px 36px;
+    background-position: 0 0;
     display: inline-block;
+    height: 18px;
     vertical-align: middle;
+    position: relative; top: -1px;
+    width: 11px;
   }
+}
 
+
+.hmcts-pagination__item--prev .hmcts-pagination__link {
+  &:before {
+    background-position: 0 0;
+    content: "";
+    margin-right: govuk-spacing(2);
+  }
 }
 
 
 .hmcts-pagination__item--next .hmcts-pagination__link {
-
   &:after {
-    background-color: govuk-colour("black");
-    height: 11px;
-    width: 12px;
-    margin-left: 5px;
-    display: inline-block;
-    vertical-align: middle;
+    background-position: -11px -18px;
+    content: "";
+    margin-left: govuk-spacing(2);
   }
-
 }
 
 
 .hmcts-pagination__link {
   display: block;
+  padding: govuk-spacing(1);
   text-align: center;
-  padding: 5px;
   text-decoration: none;
-  height: 25px;
   min-width: 25px;
+
+  &:link,
+  &:visited {
+    color: govuk-colour("blue");
+  }
+
+  &:hover {
+    color: govuk-colour("light-blue");
+   }
 
   &:focus {
     color: govuk-colour("black");
   }
 
+}
+
+
+.hmcts-pagination__results {
+  padding: govuk-spacing(1);
 }
