@@ -20,6 +20,7 @@ gulp.task('default', () => {
 gulp.task('generate-assets', () => {
   runSequence(
     'clean',
+    'compress-images',
     'copy-component-javascript',
     'copy-vendor-javascript',
     'copy-namespace',
