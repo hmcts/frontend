@@ -4,48 +4,6 @@
 
   <h1 class="govuk-heading-xl">Pagination</h1>
 
-  <nav class="pagination">
-
-    <p class="govuk-visually-hidden" id="pagination-label">Pagination navigation</p>
-
-    <ul class="pagination__list">
-
-      <li class="pagination__item  pagination__item--prev">
-        <a class="pagination__link" href="#">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
-      </li>
-
-      <li class="pagination__item">
-        <a class="pagination__link" href="/page-1"><span class="govuk-visually-hidden">Goto page </span>1</a>
-      </li>
-
-      <li class="pagination__item">
-        <a class="pagination__link" href="/page-2"><span class="govuk-visually-hidden">Goto page </span>2</a>
-      </li>
-
-      <li class="pagination__item pagination__item--active"><span class="govuk-visually-hidden">Current page </span>3</li>
-
-      <li class="pagination__item">
-        <a class="pagination__link" href="/page-4"><span class="govuk-visually-hidden">Goto page </span>4</a>
-      </li>
-
-      <li class="pagination__item pagination__item--hellip">
-        <span class="pagination">...</span>
-      </li>
-
-      <li class="pagination__item">
-        <a class="pagination__link" href="/page-150"><span class="govuk-visually-hidden">Goto page </span>150</a>
-      </li>
-
-      <li class="pagination__item  pagination__item--next">
-        <a class="pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
-      </li>
-
-    </ul>
-
-    <p class="pagination__results">Showing <b>10</b> of <b>150</b> of <b>469</b> results</p>
-
-  </nav>
-
   {{hmctsPagination({
     classes: 'my-class',
     startIndex: 10,

@@ -1,4 +1,4 @@
-.pagination__list {
+.hmcts-pagination__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,23 +9,24 @@
 
 }
 
-.pagination__item {
+
+.hmcts-pagination__item {
   @include govuk-font(19);
   display: inline-block;
-
-  &--active,
-  &--hellip {
-    padding: 5px;
-    height: 25px;
-    min-width: 25px;
-    text-align: center;
-    font-weight: bold;
-  }
-
 }
 
 
-.pagination__item--prev .pagination__link {
+.hmcts-pagination__item--active,
+.hmcts-pagination__item--dots {
+  font-weight: bold;
+  padding: 5px;
+  height: 25px;
+  min-width: 25px;
+  text-align: center;
+}
+
+
+.hmcts-pagination__item--prev .hmcts-pagination__link {
 
   &:before {
     background-color: govuk-colour("black");
@@ -39,7 +40,7 @@
 }
 
 
-.pagination__item--next .pagination__link {
+.hmcts-pagination__item--next .hmcts-pagination__link {
 
   &:after {
     background-color: govuk-colour("black");
@@ -53,7 +54,7 @@
 }
 
 
-.pagination__link {
+.hmcts-pagination__link {
   display: block;
   text-align: center;
   padding: 5px;
@@ -61,12 +62,8 @@
   height: 25px;
   min-width: 25px;
 
-  // Add visited
-
   &:focus {
     color: govuk-colour("black");
   }
 
 }
-
-

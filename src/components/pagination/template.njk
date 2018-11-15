@@ -1,26 +1,33 @@
-<div class="hmcts-pagination {{- ' ' + params.classes if params.classes}}">
+<nav class="hmcts-pagination {{- ' ' + params.classes if params.classes}}" id="pagination-label">
 
-  <div>
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+  <ul class="hmcts-pagination__list">
     {% if params.previous %}
-      <a href="{{params.previous.href}}">{{params.previous.text}}</a>
+      <li class="hmcts-pagination__item  hmcts-pagination__item--prev">
+        <a class="hmcts-pagination__link" href="{{params.previous.href}}">{{params.previous.text}}<span class="govuk-visually-hidden"> set of pages</span></a>
+      </li>
     {% endif %}
 
     {% for item in params.items %}
       {% if item.type == 'dots' %}
-        <span>...</span>
+        <li class="hmcts-pagination__item hmcts-pagination__item--dots">...</li>
       {% else %}
         {% if item.selected %}
-          <span>{{item.text}}</span>
+          <li class="hmcts-pagination__item hmcts-pagination__item--active">{{item.text}}</li>
         {% else %}
-          <a href="{{item.href}}">{{item.text}}</a>
+          <li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="{{item.href}}">{{item.text}}</a></li>
         {% endif %}
       {% endif %}
     {% endfor %}
 
     {% if params.next %}
-      <a href="{{params.next.href}}">{{params.next.text}}</a>
+      <li class="hmcts-pagination__item  hmcts-pagination__item--next">
+        <a class="hmcts-pagination__link" href="{{params.next.href}}">{{params.next.text}}<span class="govuk-visually-hidden"> set of pages</span></a>
+      </li>
     {% endif %}
   </div>
-  <div>Showing {{params.startIndex}} to {{params.endIndex}} of {{params.resultCount}}</div>
 
-</div>
+  <p class="hmcts-pagination__results">Showing <b>{{params.startIndex}}</b> to <b>{{params.endIndex}}</b> of <b>{{params.resultCount}}</b> results</p>
+
+</nav>
