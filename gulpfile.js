@@ -8,39 +8,42 @@ requireDir('./gulp', {
 });
 
 
-gulp.task('default', () => {
+gulp.task('default', (done) => {
   runSequence(
     'generate-assets',
     'watch',
-    'server'
+    'server',
+    done
   );
 });
 
 
-gulp.task('generate-assets', () => {
+gulp.task('generate-assets', (done) => {
   runSequence(
     'clean',
-    'compress-images',
     'copy-component-javascript',
     'copy-vendor-javascript',
     'copy-namespace',
-    'sass'
+    'sass',
+    done
   );
 });
 
 
-gulp.task('watch', () => {
+gulp.task('watch', (done) => {
   runSequence(
-    'watch-sass'
+    'watch-sass',
+    done
   );
 });
 
 
-gulp.task('build:package', () => {
+gulp.task('build:package', (done) => {
   runSequence(
     'build:clean',
     'build:copy-files',
     'build:javascript',
     'build:compress-images',
+    done
   );
 });
