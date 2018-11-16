@@ -33,6 +33,19 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.22-alpha
+
+🆕 New features:
+
+- Added pagination
+- Minification for images for publication
+
+🏠 Internal:
+
+- Changed sub navigation active state to explicitly state aria-current="page
+- Autoprefixer added for local development
+- Cleared readme from package/ folder
+
 ## 0.0.21-alpha
 
 🆕 New features:
