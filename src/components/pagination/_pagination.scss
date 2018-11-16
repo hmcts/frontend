@@ -1,5 +1,5 @@
 .hmcts-pagination {
-  text-align: center;
+  // text-align: center;
 
   @include mq($from: desktop) {
 
@@ -54,7 +54,7 @@
 .hmcts-pagination__item--dots {
   font-weight: bold;
   height: 25px;
-  padding: govuk-spacing(1);
+  padding: govuk-spacing(1) govuk-spacing(2);
   text-align: center;
 }
 

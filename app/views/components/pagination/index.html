@@ -5,9 +5,11 @@
   <h1 class="govuk-heading-xl">Pagination</h1>
 
   {{hmctsPagination({
-    startIndex: 10,
-    endIndex: 20,
-    resultCount: 256,
+    results: {
+      from: 10,
+      to: 20,
+      count: 256
+    },
 
     previous: {
       text: 'Previous',
@@ -39,6 +41,110 @@
       href: '/page=10'
     }]
   })}}
+
+  <br>
+  <br>
+
+  {{hmctsPagination({
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+    next: {
+      text: 'Next',
+      href: ''
+    }
+  })}}
+
+  <br>
+  <br>
+
+  {{hmctsPagination({
+    results: {
+      from: 10,
+      to: 20,
+      count: 256
+    },
+
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+    items: [{
+      text: '1',
+      href: '/page=1'
+    }, {
+      text: '2',
+      href: '/page=5'
+    }, {
+      text: '3',
+      href: '/page=6',
+      selected: true
+    }]
+  })}}
+
+  <br>
+  <br>
+
+  {{hmctsPagination({
+    results: {
+      from: 10,
+      to: 20,
+      count: 256
+    },
+
+    next: {
+      text: 'Next',
+      href: ''
+    },
+
+    items: [{
+      text: '1',
+      href: '/page=1',
+      selected: true
+    }, {
+      text: '2',
+      href: '/page=5'
+    }, {
+      text: '3',
+      href: '/page=6'
+    }]
+  })}}
+
+
+  <br>
+  <br>
+
+  {{hmctsPagination({
+    results: {
+      from: 10,
+      to: 20,
+      count: 256
+    },
+
+    previous: {
+      text: 'Previous',
+      href: ''
+    },
+
+    next: {
+      text: 'Next',
+      href: ''
+    },
+
+    items: [{
+      text: '1',
+      href: '/page=1'
+    }, {
+      text: '2',
+      href: '/page=5',
+      selected: true
+    }, {
+      text: '3',
+      href: '/page=6'
+    }]
+  })}}
+
 
 {% endblock %}
 

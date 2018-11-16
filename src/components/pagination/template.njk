@@ -28,6 +28,8 @@
     {% endif %}
   </ul>
 
-  <p class="hmcts-pagination__results">Showing <b>{{params.startIndex}}</b> to <b>{{params.endIndex}}</b> of <b>{{params.resultCount}}</b> results</p>
+  {% if params.results %}
+    <p class="hmcts-pagination__results">Showing <b>{{params.results.from}}</b> to <b>{{params.results.to}}</b> of <b>{{params.results.count}}</b> results</p>
+  {% endif %}
 
 </nav>
