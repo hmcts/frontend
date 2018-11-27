@@ -33,6 +33,17 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.23-alpha
+
+🆕 New features:
+
+- Changed name of Details Bar to Identity Bar
+- Simplified params of Identity Bar so that it's just `title` and `items`
+
+🏠 Internal:
+
+- Upgrade to latest GOV.UK Frontend 2.4.0
+
 ## 0.0.22-alpha
 
 🆕 New features:
