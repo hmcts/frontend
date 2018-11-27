@@ -1,0 +1,21 @@
+{%- from "menu/macro.njk" import hmctsMenu %}
+
+<div class="hmcts-identity-bar {{- ' ' + params.classes if params.classes}}">
+
+  <div class="hmcts-identity-bar__container">
+
+    <div class="hmcts-identity-bar__details">
+      {% if params.title %}
+        <span class="hmcts-identity-bar__title">{{ params.title.html | safe if params.title.html else params.title.text }}</span>
+      {% endif %}
+    </div>
+
+    {% if params.items %}
+      <div class="hmcts-identity-bar__actions">
+        {{hmctsMenu({ items: params.items })}}
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>
