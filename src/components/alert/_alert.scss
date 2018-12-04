@@ -25,6 +25,16 @@
   overflow: hidden;
 }
 
+.hmcts-alert__message {
+  h2 {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 
 .hmcts-alert__assistive {
   @include govuk-visually-hidden;
