@@ -30,6 +30,10 @@
     margin-bottom: govuk-spacing(2);
   }
 
+  h2:last-child {
+    margin-bottom: 0;
+  }
+
   p:last-child {
     margin-bottom: 0;
   }
