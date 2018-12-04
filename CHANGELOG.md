@@ -33,6 +33,20 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.24-alpha
+
+🆕 New features:
+
+- The banner (formely alert) now styles custom html without too much whitespace
+
+💥 Breaking changes:
+
+- Rename alert to banner
+
+🔧 Fixes:
+
+- Toggle search z index added so that it appears on top of page.
+
 ## 0.0.23-alpha
 
 🆕 New features:
