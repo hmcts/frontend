@@ -33,6 +33,14 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.25-alpha
+
+🆕 New features:
+
+- The red warning banner now uses standard red colour instead of ‘bright-red’
+- The Identity Bar now takes multiple menus which accomodates the ability to have some primary actions and other actions tucked inside a toggle menu.
+- Now using latest GOV.UK Frontend v2.5.0
+
 ## 0.0.24-alpha
 
 🆕 New features:
