@@ -56,5 +56,5 @@
 
 .hmcts-banner--warning {
   border-color: inherit;
-  color: govuk-colour("bright-red");
+  color: $govuk-error-colour;
 }
