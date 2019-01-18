@@ -10,11 +10,21 @@
       {% endif %}
     </div>
 
-    {% if params.items %}
+    {% if params.menus %}
+      <div class="hmcts-identity-bar__actions">
+        {% for menu in params.menus %}
+          <div class="hmcts-identity-bar__menu">
+            {{hmctsMenu({ items: menu.items })}}
+          </div>
+        {% endfor %}
+      </div>
+    {% elseif params.items %}
       <div class="hmcts-identity-bar__actions">
         {{hmctsMenu({ items: params.items })}}
       </div>
     {% endif %}
+
+
 
   </div>
 

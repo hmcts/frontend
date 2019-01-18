@@ -55,3 +55,13 @@
   }
 
 }
+
+.hmcts-identity-bar__menu {
+  display: inline-block;
+  margin-right: govuk-spacing(2);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
