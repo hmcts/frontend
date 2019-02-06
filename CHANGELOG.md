@@ -37,6 +37,12 @@
 
 🔧 Fixes:
 
+- Menu items that are links when laid out in a row (not as a toggle menu)
+
+## 0.0.26-alpha
+
+🔧 Fixes:
+
 - Menu items that are links were inheriting styles from the base link style.
 - An open menu stayed open even if the user clicks somewhere else on the page.
 
