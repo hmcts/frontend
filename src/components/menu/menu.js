@@ -12,6 +12,13 @@ HMCTSFrontend.Menu = function(params) {
 	this.menu.on('keydown', '[role=menuitem]', $.proxy(this, 'onButtonKeydown'));
 	this.createToggleButton();
 	this.setupResponsiveChecks();
+	$(document).on('click', $.proxy(this, 'onDocumentClick'));
+};
+
+HMCTSFrontend.Menu.prototype.onDocumentClick = function(e) {
+	if(!$.contains(this.container[0], e.target)) {
+	  this.hideMenu();
+  }
 };
 
 HMCTSFrontend.Menu.prototype.createToggleButton = function() {
