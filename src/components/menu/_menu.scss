@@ -65,11 +65,6 @@
   &:last-child {
     margin-right: 0;
   }
-  &:link,
-  &:visited {
-    text-decoration: none;
-    color:  govuk-colour("black");
-  }
 }
 
 .hmcts-menu [role=menuitem] {
@@ -84,6 +79,12 @@
   width: 100%;
   -webkit-box-sizing: border-box;
   -webkit-appearance: none;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color:  govuk-colour("black");
+  }
 
   &:hover {
     background-color: govuk-colour("grey-2");
