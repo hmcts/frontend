@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.27-alpha
+
+🔧 Fixes:
+
+- Menu items that are links when laid out in a row (not as a toggle menu)
+
 ## 0.0.26-alpha
 
 🔧 Fixes:
