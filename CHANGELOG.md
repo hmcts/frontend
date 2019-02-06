@@ -33,6 +33,13 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.26-alpha
+
+🔧 Fixes:
+
+- Menu items that are links were inheriting styles from the base link style.
+- An open menu stayed open even if the user clicks somewhere else on the page.
+
 ## 0.0.25-alpha
 
 🆕 New features:
