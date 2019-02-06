@@ -33,7 +33,7 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
-## 0.0.26-alpha
+## 0.0.27-alpha
 
 🔧 Fixes:
 
