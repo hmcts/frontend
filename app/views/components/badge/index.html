@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <h1 class="govuk-heading-l">Badge</h1>
+
+  {{ hmctsBadge({
+    text: 'Default blue badge'
+  }) }}
+
+  <br><br>
+
+  {{ hmctsBadge({
+    classes: 'hmcts-badge--red',
+    text: 'Red badge'
+  }) }}
+
+  <br><br>
+
+  {{ hmctsBadge({
+    classes: 'hmcts-badge--green',
+    text: 'Green badge'
+  }) }}
+
+{% endblock %}
