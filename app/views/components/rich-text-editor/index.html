@@ -1,0 +1,47 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+
+      <h1 class="govuk-heading-l">Rich text editor</h1>
+
+      <form>
+          {{ govukInput({
+            label: {
+              text: 'Subject'
+            },
+            id: 'subject',
+            name: 'subject',
+            value: question.subject,
+            errorMessage: inlineErrors.subject
+          }) }}
+
+          {{ govukTextarea({
+            classes: 'js-editor',
+            label: {
+              text: 'Question'
+            },
+            id: 'body',
+            name: 'body',
+            value: question.body,
+            errorMessage: inlineErrors.body
+          }) }}
+
+          {{ govukButton({
+            text: 'Save question'
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    new HMCTSFrontend.RichTextEditor($('.js-editor'));
+  </script>
+
+{% endblock %}
