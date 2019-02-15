@@ -33,6 +33,12 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.29-alpha
+
+🆕 New features:
+
+- Rich text editor toolbar is configurable and sensible defaults only include lists and numbered lists.
+
 ## 0.0.28-alpha
 
 🆕 New features:
