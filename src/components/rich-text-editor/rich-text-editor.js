@@ -1,18 +1,31 @@
 if('contentEditable' in document.documentElement) {
-  HMCTSFrontend.RichTextEditor = function(textarea) {
-    this.textarea = textarea;
-    this.container = $(textarea).parent();
+  HMCTSFrontend.RichTextEditor = function(options) {
+    this.options = options;
+    this.options.toolbar = this.options.toolbar || {
+      bold: false,
+      italic: false,
+      underline: false,
+      list: true,
+      numbers: true
+    };
+    this.textarea = this.options.textarea;
+    this.container = $(this.textarea).parent();
     this.createToolbar();
     this.hideDefault();
     this.configureToolbar();
     this.keys = {
+      bold: 66,
+      underline: 85,
+      italic: 73,
       left: 37,
       right: 39,
       up: 38,
       down: 40
     };
     this.container.on('click', '.hmcts-rich-text-editor__toolbar-button', $.proxy(this, 'onButtonClick'));
+    this.container.find('.hmcts-rich-text-editor__content').on('keydown', $.proxy(this, 'onEditorKeydown'));
     this.container.find('.hmcts-rich-text-editor__content').on('input', $.proxy(this, 'onEditorInput'));
+    this.container.find('label').on('click', $.proxy(this, 'onLabelClick'));
 
     this.toolbar.on('keydown', $.proxy(this, 'onToolbarKeydown'));
   };
@@ -43,17 +56,38 @@ if('contentEditable' in document.documentElement) {
     }
   };
 
-  HMCTSFrontend.RichTextEditor.prototype.getEnhancedHtml = function(val) {
-    return `<div class="hmcts-rich-text-editor__toolbar" role="toolbar">
-              <button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--bold" type="button" data-command="bold"><span class="govuk-visually-hidden">Bold</span></button>
-              <button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--italic" type="button" data-command="italic"><span class="govuk-visually-hidden">Italic</span></button>
-              <button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--underline" type="button" data-command="underline"><span class="govuk-visually-hidden">Underline</span></button>
-              <button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--unordered-list" type="button" data-command="insertUnorderedList"><span class="govuk-visually-hidden">Unordered list</span></button>
-              <button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--ordered-list" type="button" data-command="insertOrderedList"><span class="govuk-visually-hidden">Ordered list</span></button>
-            </div>
-            <div class="hmcts-rich-text-editor__content" contenteditable="true" spellcheck="false"></div>`;
+  HMCTSFrontend.RichTextEditor.prototype.getToolbarHtml = function() {
+    var html = '';
+
+    html += '<div class="hmcts-rich-text-editor__toolbar" role="toolbar">';
+
+    if(this.options.toolbar.bold) {
+      html += '<button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--bold" type="button" data-command="bold"><span class="govuk-visually-hidden">Bold</span></button>';
+    }
+
+    if(this.options.toolbar.italic) {
+      html += '<button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--italic" type="button" data-command="italic"><span class="govuk-visually-hidden">Italic</span></button>';
+    }
+
+    if(this.options.toolbar.underline) {
+      html += '<button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--underline" type="button" data-command="underline"><span class="govuk-visually-hidden">Underline</span></button>';
+    }
+
+    if(this.options.toolbar.list) {
+      html += '<button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--unordered-list" type="button" data-command="insertUnorderedList"><span class="govuk-visually-hidden">Unordered list</span></button>';
+    }
+
+    if(this.options.toolbar.numbers) {
+      html += '<button class="hmcts-rich-text-editor__toolbar-button hmcts-rich-text-editor__toolbar-button--ordered-list" type="button" data-command="insertOrderedList"><span class="govuk-visually-hidden">Ordered list</span></button>';
+    }
+
+    html += '</div>';
+    return html;
   };
 
+  HMCTSFrontend.RichTextEditor.prototype.getEnhancedHtml = function(val) {
+    return this.getToolbarHtml() + '<div class="hmcts-rich-text-editor__content" contenteditable="true" spellcheck="false"></div>';
+  };
 
   HMCTSFrontend.RichTextEditor.prototype.hideDefault = function() {
     this.textarea = this.container.find('textarea');
@@ -83,7 +117,27 @@ if('contentEditable' in document.documentElement) {
   };
 
   HMCTSFrontend.RichTextEditor.prototype.getContent = function() {
-    return this.container.find('.hmcts-rich-text-editor__content')[0].innerHTML;
+    return this.container.find('.hmcts-rich-text-editor__content').html();
+  };
+
+  HMCTSFrontend.RichTextEditor.prototype.onEditorKeydown = function(e) {
+    // if(!this.options.toolbar.italic) {
+    //   if((e.keyCode === this.keys.italic) && (e.metaKey || e.ctrlKey)) {
+    //     e.preventDefault();
+    //   }
+    // }
+
+    // if(!this.options.toolbar.bold) {
+    //   if((e.keyCode === this.keys.bold) && (e.metaKey || e.ctrlKey)) {
+    //     e.preventDefault();
+    //   }
+    // }
+
+    // if(!this.options.toolbar.underline) {
+    //   if((e.keyCode === this.keys.underline) && (e.metaKey || e.ctrlKey)) {
+    //     e.preventDefault();
+    //   }
+    // }
   };
 
   HMCTSFrontend.RichTextEditor.prototype.onEditorInput = function(e) {
@@ -94,4 +148,10 @@ if('contentEditable' in document.documentElement) {
     document.execCommand('defaultParagraphSeparator', false, 'p');
     this.textarea.val(this.getContent());
   };
+
+  HMCTSFrontend.RichTextEditor.prototype.onLabelClick = function(e) {
+    e.preventDefault();
+    this.container.find('.hmcts-rich-text-editor__content').focus();
+  };
+
 }

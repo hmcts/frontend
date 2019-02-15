@@ -51,11 +51,11 @@
 
 .hmcts-rich-text-editor__toolbar-button--underline {
   background-image: url(#{$hmcts-images-path}icon-wysiwyg-underline.svg);
-  margin-right: govuk-spacing(2);
 }
 
 .hmcts-rich-text-editor__toolbar-button--unordered-list {
   background-image: url(#{$hmcts-images-path}icon-wysiwyg-unordered-list.svg);
+  margin-left: govuk-spacing(2);
 }
 
 .hmcts-rich-text-editor__toolbar-button--ordered-list {
