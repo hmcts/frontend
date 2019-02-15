@@ -14,19 +14,14 @@ if('contentEditable' in document.documentElement) {
     this.hideDefault();
     this.configureToolbar();
     this.keys = {
-      bold: 66,
-      underline: 85,
-      italic: 73,
       left: 37,
       right: 39,
       up: 38,
       down: 40
     };
     this.container.on('click', '.hmcts-rich-text-editor__toolbar-button', $.proxy(this, 'onButtonClick'));
-    this.container.find('.hmcts-rich-text-editor__content').on('keydown', $.proxy(this, 'onEditorKeydown'));
     this.container.find('.hmcts-rich-text-editor__content').on('input', $.proxy(this, 'onEditorInput'));
     this.container.find('label').on('click', $.proxy(this, 'onLabelClick'));
-
     this.toolbar.on('keydown', $.proxy(this, 'onToolbarKeydown'));
   };
 
@@ -118,26 +113,6 @@ if('contentEditable' in document.documentElement) {
 
   HMCTSFrontend.RichTextEditor.prototype.getContent = function() {
     return this.container.find('.hmcts-rich-text-editor__content').html();
-  };
-
-  HMCTSFrontend.RichTextEditor.prototype.onEditorKeydown = function(e) {
-    // if(!this.options.toolbar.italic) {
-    //   if((e.keyCode === this.keys.italic) && (e.metaKey || e.ctrlKey)) {
-    //     e.preventDefault();
-    //   }
-    // }
-
-    // if(!this.options.toolbar.bold) {
-    //   if((e.keyCode === this.keys.bold) && (e.metaKey || e.ctrlKey)) {
-    //     e.preventDefault();
-    //   }
-    // }
-
-    // if(!this.options.toolbar.underline) {
-    //   if((e.keyCode === this.keys.underline) && (e.metaKey || e.ctrlKey)) {
-    //     e.preventDefault();
-    //   }
-    // }
   };
 
   HMCTSFrontend.RichTextEditor.prototype.onEditorInput = function(e) {
