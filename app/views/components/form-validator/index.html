@@ -1,0 +1,148 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+
+      <div tabindex="-1" role="group" id="errorSummary" class="govuk-error-summary hmcts-hidden" aria-labelledby="error-summary-title" data-module="error-summary">
+
+      </div>
+
+      <h1 class="govuk-heading-l">Form validator (client-side)</h1>
+
+      <form novalidate>
+        {{ govukInput({
+          label: {
+            text: "Email",
+            classes: 'govuk-label--m'
+          },
+          id: "email",
+          name: "email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Password",
+            classes: 'govuk-label--m'
+          },
+          id: "password",
+          name: "password"
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "location",
+          name: "location",
+
+          fieldset: {
+            legend: {
+              text: "Where do you live?",
+              classes: 'govuk-fieldset__legend--m'
+            }
+          },
+          items: [
+            {
+              id: 'location',
+              value: "england",
+              text: "England"
+            },
+            {
+              value: "scotland",
+              text: "Scotland"
+            },
+            {
+              value: "wales",
+              text: "Wales"
+            },
+            {
+              value: "northern-ireland",
+              text: "Northern Ireland"
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              classes: 'govuk-fieldset__legend--m'
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    var validator = new HMCTSFrontend.FormValidator(document.forms[0]);
+    validator.addValidator('email', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter your email address.'
+    },{
+      method: function(field) {
+          return (field.value.indexOf('@') > -1);
+        },
+      message: 'You need to enter the ‘at’ symbol in the email address.'
+    }]);
+    validator.addValidator('password', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter your password.'
+    }, {
+      method: function(field) {
+          return field.value.length > 8;
+      },
+      message: 'Your password must contain at least 8 characters.'
+    }, {
+      method: function(field) {
+        return /\d/.test(field.value);
+      },
+      message: 'Your password must contain at least one number.'
+    }]);
+    validator.addValidator('location', [{
+      method: function(field) {
+        return field.value.trim().length > 0;
+      },
+      message: 'Select where you live.'
+    }]);
+    validator.addValidator('dob-day', [{
+      method: function(field, params) {
+        return (params.day.value.length !== 0 && params.month.value.length !== 0 && params.year.value !== 0);
+      },
+      message: 'Enter a date of birth.',
+      params: {
+        day: document.getElementById('dob-day'),
+        month: document.getElementById('dob-month'),
+        year: document.getElementById('dob-year')
+      }
+    }, {
+      method: function(field, params) {
+        var d = new Date(parseInt(params.year.value, 10), parseInt(params.month.value, 10)-1, parseInt(params.day.value, 10)-1);
+        return d instanceof Date && !isNaN(d);
+      },
+      message: 'Enter a valid date of birth.',
+      params: {
+        day: document.getElementById('dob-day'),
+        month: document.getElementById('dob-month'),
+        year: document.getElementById('dob-year')
+      }
+    }]);
+  </script>
+
+{% endblock %}
