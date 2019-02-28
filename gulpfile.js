@@ -23,7 +23,7 @@ gulp.task('generate-assets', (done) => {
     'clean',
     'copy-component-javascript',
     'copy-vendor-javascript',
-    'copy-namespace',
+    'copy-global-javascript',
     'sass',
     done
   );

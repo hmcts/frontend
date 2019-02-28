@@ -11,5 +11,5 @@ gulp.task('watch-sass', () => {
     'src/components/**/*.js',
     'src/namespace.js',
     'app/assets/sass/*.scss'
-  ], ['sass', 'copy-component-javascript', 'copy-namespace']);
+  ], ['sass', 'copy-component-javascript', 'copy-global-javascript']);
 });
