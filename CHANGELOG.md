@@ -33,6 +33,13 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.30-alpha
+
+🆕 New features:
+
+- Client-side form validation
+- Sortable tables
+
 ## 0.0.29-alpha
 
 🆕 New features:
