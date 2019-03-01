@@ -60,6 +60,9 @@
 
     {%- block scripts %}
       {%- include "includes/scripts.html" %}
+      <script>
+        window.GOVUKFrontend.initAll()
+      </script>
       {%- block pageScripts %}{% endblock %}
     {%- endblock %}
 

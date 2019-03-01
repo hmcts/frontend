@@ -4,7 +4,6 @@ HMCTSFrontend.FormValidator = function(form, options) {
   this.validators = [];
   $(this.form).on('submit', $.proxy(this, 'onSubmit'));
   this.summary = (options && options.summary) ? $(options.summary) : $('.govuk-error-summary');
-  // this.summary.on('click', 'a', $.proxy(this, 'onErrorClick'));
   this.originalTitle = document.title;
 };
 
@@ -23,13 +22,6 @@ HMCTSFrontend.FormValidator.escapeHtml = function(string) {
   return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
     return HMCTSFrontend.FormValidator.entityMap[s];
   });
-};
-
-HMCTSFrontend.FormValidator.prototype.onErrorClick = function(e) {
-  e.preventDefault();
-  var href = e.target.href;
-  var id = href.substring(href.indexOf("#"), href.length);
-  $(id).focus();
 };
 
 HMCTSFrontend.FormValidator.prototype.resetTitle = function() {
