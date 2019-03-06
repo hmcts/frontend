@@ -123,7 +123,11 @@
     }]);
     validator.addValidator('dob-day', [{
       method: function(field, params) {
-        return (params.day.value.length !== 0 && params.month.value.length !== 0 && params.year.value !== 0);
+        if(params.day.value.length === 0 && params.month.value.length === 0 && params.year.value.length === 0) {
+          return false;
+        } else {
+          return true;
+        }
       },
       message: 'Enter a date of birth.',
       params: {
@@ -133,6 +137,12 @@
       }
     }, {
       method: function(field, params) {
+        if(params.month.value.trim().length === 0) {
+          return "dob-month";
+        }
+        if(params.year.value.trim().length === 0) {
+          return "dob-year";
+        }
         var d = new Date(parseInt(params.year.value, 10), parseInt(params.month.value, 10)-1, parseInt(params.day.value, 10)-1);
         return d instanceof Date && !isNaN(d);
       },

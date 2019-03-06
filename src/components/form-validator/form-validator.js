@@ -18,7 +18,7 @@ HMCTSFrontend.FormValidator.entityMap = {
   '=': '&#x3D;'
 };
 
-HMCTSFrontend.FormValidator.escapeHtml = function(string) {
+HMCTSFrontend.FormValidator.prototype.escapeHtml = function(string) {
   return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
     return HMCTSFrontend.FormValidator.entityMap[s];
   });
@@ -46,8 +46,8 @@ HMCTSFrontend.FormValidator.prototype.getSummaryHtml = function() {
   for (var i = 0, j = this.errors.length; i < j; i++) {
     var error = this.errors[i];
     html += '<li>';
-    html +=   '<a href="#' + HMCTSFrontend.FormValidator.escapeHtml(error.fieldName) + '">';
-    html +=     HMCTSFrontend.FormValidator.escapeHtml(error.message);
+    html +=   '<a href="#' + this.escapeHtml(error.fieldName) + '">';
+    html +=     this.escapeHtml(error.message);
     html +=   '</a>';
     html += '</li>';
   }
@@ -81,7 +81,7 @@ HMCTSFrontend.FormValidator.prototype.showInlineErrors = function() {
 
 HMCTSFrontend.FormValidator.prototype.showInlineError = function (error) {
   var errorSpanId = error.fieldName + '-error';
-  var errorSpan = '<span class="govuk-error-message" id="'+ errorSpanId +'">'+HMCTSFrontend.FormValidator.escapeHtml(error.message)+'</span>';
+  var errorSpan = '<span class="govuk-error-message" id="'+ errorSpanId +'">'+this.escapeHtml(error.message)+'</span>';
   var control = $("#" + error.fieldName);
   var fieldContainer = control.parents(".govuk-form-group");
   var label = fieldContainer.find('label');
@@ -128,17 +128,24 @@ HMCTSFrontend.FormValidator.prototype.addValidator = function(fieldName, rules) 
 HMCTSFrontend.FormValidator.prototype.validate = function() {
   this.errors = [];
   var validator = null,
-    validatorValid = true,
+    validatorReturnValue = true,
     i,
     j;
   for (i = 0; i < this.validators.length; i++) {
     validator = this.validators[i];
     for (j = 0; j < validator.rules.length; j++) {
-      validatorValid = validator.rules[j].method(validator.field,
+      validatorReturnValue = validator.rules[j].method(validator.field,
         validator.rules[j].params);
-      if (!validatorValid) {
+
+      if (typeof validatorReturnValue === 'boolean' && !validatorReturnValue) {
         this.errors.push({
           fieldName: validator.fieldName,
+          message: validator.rules[j].message
+        });
+        break;
+      } else if(typeof validatorReturnValue === 'string') {
+        this.errors.push({
+          fieldName: validatorReturnValue,
           message: validator.rules[j].message
         });
         break;
