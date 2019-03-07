@@ -1,0 +1,18 @@
+.hmcts-currency-input {
+  position: relative;
+}
+
+.hmcts-currency-input__symbol {
+  @include govuk-font(19);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  padding: 8px 10px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.hmcts-currency-input input {
+  padding-left: 25px;
+}

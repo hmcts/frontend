@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h1 class="govuk-heading-l">Currency input</h1>
+
+  {{hmctsCurrencyInput({
+    id: 'adam',
+    name: 'adam',
+    label: {
+      html: 'How much do you owe?'
+    }
+  })}}
+
+{% endblock %}
