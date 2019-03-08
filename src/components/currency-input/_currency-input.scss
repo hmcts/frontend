@@ -11,8 +11,10 @@
   padding: 8px 10px;
   height: 40px;
   box-sizing: border-box;
+  background-color: govuk-colour('grey-4');
+  border: 2px solid govuk-colour('black');
 }
 
 .hmcts-currency-input input {
-  padding-left: 25px;
+  padding-left: govuk-spacing(7);
 }
