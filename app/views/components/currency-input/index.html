@@ -4,14 +4,25 @@
   <h1 class="govuk-heading-l">Currency input</h1>
 
   {{hmctsCurrencyInput({
-    id: 'adam',
-    name: 'adam',
+    classes: 'adam silver',
+    id: 'input1',
+    name: 'input1',
     label: {
       classes: 'govuk-label--m',
       html: 'How much do you owe?'
     },
     hint: {
       text: 'For example, £40.99'
+    }
+  })}}
+
+  {{hmctsCurrencyInput({
+    classes: 'hmcts-currency-input__input--right-aligned',
+    id: 'input2',
+    name: 'input2',
+    label: {
+      classes: 'govuk-label--m',
+      html: 'How much do you owe?'
     }
   })}}
 

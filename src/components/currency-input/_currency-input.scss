@@ -18,3 +18,7 @@
 .hmcts-currency-input input {
   padding-left: govuk-spacing(7);
 }
+
+.hmcts-currency-input__input--right-aligned {
+  text-align: right;
+}
