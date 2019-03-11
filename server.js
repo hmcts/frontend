@@ -35,8 +35,6 @@ const nunjucksEnvironment = nunjucks.configure(appViews, {
   watch: true
 });
 
-
-
 // Set view engine
 app.set('view engine', 'html');
 
