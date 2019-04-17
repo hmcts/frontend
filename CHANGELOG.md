@@ -33,6 +33,17 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.32-alpha
+
+🆕 New features:
+
+- Filter now uses small checkboxes from govuk-front
+- Now uses prototype kit extension config making this easy to install in the prototype kit
+
+🏠 Internal:
+
+- Upgrade to latest govuk-frontend 2.10.0
+
 ## 0.0.31-alpha
 
 🆕 New features:
