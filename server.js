@@ -43,7 +43,7 @@ app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')));
 app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'assets')));
-app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')));
+app.use('/hmcts-assets', express.static(path.join(__dirname, 'src', 'assets')));
 
 // Use routes
 app.use(routes);

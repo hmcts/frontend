@@ -1,6 +1,6 @@
 {
   "assets": [
-    "/assets/images"
+    "/hmcts-assets/images"
   ],
   "nunjucksPaths": [
     "/components"
