@@ -14,17 +14,11 @@
       <div class="hmcts-identity-bar__actions">
         {% for menu in params.menus %}
           <div class="hmcts-identity-bar__menu">
-            {{hmctsMenu({ items: menu.items })}}
+            {{hmctsMenu({ items: menu.items, classes: menu.classes })}}
           </div>
         {% endfor %}
       </div>
-    {% elseif params.items %}
-      <div class="hmcts-identity-bar__actions">
-        {{hmctsMenu({ items: params.items })}}
-      </div>
     {% endif %}
-
-
 
   </div>
 
