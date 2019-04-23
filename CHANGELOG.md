@@ -33,6 +33,21 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.33-alpha
+
+💥 Breaking changes:
+
+- Import path to macro updated to reflect the agreed convention
+  ([Issue #72](https://github.com/hmcts/frontend/issues/72))
+- Changed default SASS path to assets to `hmcts-assets` from `assets` so there's no chance of a clash with assets from GOV.UK Frontend, especially when using the extensions in the GOV.UK Prototype Kit.
+
+🔧 Fixes:
+
+- Internet Explorer 11 borders missing on banners. Thanks to [Matthew Burstein](https://github.com/MatthewBurstein)
+  ([PR #69](https://github.com/hmcts/frontend/pull/69))
+- Identity Bar simplified and pulls through menu classes. Thanks to [Ed Horsford](https://github.com/edwardhorsford)
+  ([Issue #68](https://github.com/hmcts/frontend/issues/68))
+
 ## 0.0.32-alpha
 
 🆕 New features:
