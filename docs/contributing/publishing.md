@@ -8,7 +8,7 @@ This guide explains how to publish a new version of HMCTS on NPM.
 
 3. Run `npm install` to ensure you have the latest dependencies installed.
 
-4. Create and checkout a new branch (`release-[version-number]`).
+4. Create and checkout a new branch: run `git checkout -b release-x.x.x-phase` for example `git checkout -b release-0.0.34-alpha`.
 
 5. Update [`CHANGELOG.md`](../../CHANGELOG.md) "Unreleased" heading with the new version number.
    This should be incremented based on [Semantic versioning](https://semver.org/) from the unreleased changes listed.
