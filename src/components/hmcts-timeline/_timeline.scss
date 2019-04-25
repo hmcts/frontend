@@ -66,6 +66,12 @@
     margin-bottom: 0;
   }
 
+  .hmcts-timeline__description {
+    @include govuk-font($size: 16);
+    margin-top: govuk-spacing(4);
+    // margin-bottom: 0;
+  }
+
 
   .hmcts-timeline__documents {
     list-style: none;
