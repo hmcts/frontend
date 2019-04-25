@@ -33,6 +33,20 @@
 - Intenral change description x
   ([PR #123456](https://github.com/hmcts/hmcts-frontend/pull/123456))
 
+## 0.0.34-alpha
+
+🆕 New features:
+
+- Timeline component now allows html for heading, and an optional description
+
+💥 Breaking changes:
+
+- Header and footer macro names changed to remove "global" as now namespaced.
+
+🏠 Internal:
+
+- Update publishing guides
+
 ## 0.0.33-alpha
 
 💥 Breaking changes:
