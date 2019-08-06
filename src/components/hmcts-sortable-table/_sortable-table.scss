@@ -15,7 +15,10 @@
   text-align: inherit;
   font-size: 1em;
   margin: 0;
-  @include govuk-focusable;
+}
+
+[aria-sort] button:focus {
+  @include govuk-focused-text;
 }
 
 [aria-sort]:first-child button {

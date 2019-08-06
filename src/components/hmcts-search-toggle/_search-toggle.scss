@@ -24,7 +24,7 @@
   }
 
   &:focus {
-    @include govuk-focusable;
+    @include govuk-focused-text;
     position: relative;
     z-index: 1;
   }
