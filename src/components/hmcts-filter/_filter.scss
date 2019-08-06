@@ -5,10 +5,7 @@
 .hmcts-filter {
   background-color: govuk-colour("white");
   box-shadow: inset 0 0 0 1px govuk-colour("grey-3");
-
-  &:focus {
-    @include govuk-focused-text;
-  }
+  @include govuk-focusable;
 }
 
 
@@ -75,7 +72,7 @@
     }
 
     &:focus {
-      @include govuk-focused-text;
+      @include govuk-focusable;
     }
 
   }
@@ -92,6 +89,7 @@
 
 
 .hmcts-filter__close {
+  @include govuk-focusable;
   color: govuk-colour("black");
   cursor: pointer; // I know Adam won’t like this
   background-color: transparent;
@@ -101,10 +99,6 @@
   padding: 0;
   -webkit-appearance: none;
 
-  &:focus {
-    @include govuk-focused-text;
-  }
-  
   // Fix unwanted button padding in Firefox
   &::-moz-focus-inner {
     padding: 0;
