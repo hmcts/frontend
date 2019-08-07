@@ -16,7 +16,7 @@
 
     &:after {
       content: "";
-      background-color: govuk-colour("light-grey", $legacy: "govuk-colour("light-grey", $legacy: "grey-3")");
+      background-color: govuk-colour("light-grey", $legacy: "grey-3");
       height: 40px;
       position: absolute;
       right: 0;
