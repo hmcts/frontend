@@ -11,7 +11,7 @@
   padding: 8px 10px;
   height: 40px;
   box-sizing: border-box;
-  background-color: govuk-colour('grey-3');
+  background-color: govuk-colour('light-grey', $legacy: 'grey-3');
   border: 2px solid govuk-colour('black');
 }
 

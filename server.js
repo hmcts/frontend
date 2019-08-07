@@ -19,7 +19,7 @@ const port = process.env.PORT || 3000;
 
 // Set up application
 const appViews = [
-  path.join(__dirname, '/node_modules/govuk-frontend/components'),
+  path.join(__dirname, '/node_modules/govuk-frontend/govuk/components'),
   path.join(__dirname, '/app/views'),
   path.join(__dirname, '/app/views/layouts'),
   path.join(__dirname, '/app/views/partials'),
@@ -41,8 +41,8 @@ app.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')));
-app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')));
-app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'assets')));
+app.use('/node_modules/govuk-frontend/govuk', express.static(path.join(__dirname, '/node_modules/govuk-frontend/govuk')));
+app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'govuk', 'assets')));
 app.use('/hmcts-assets', express.static(path.join(__dirname, 'src', 'assets')));
 
 // Use routes
