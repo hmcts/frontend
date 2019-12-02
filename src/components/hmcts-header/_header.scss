@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .hmcts-header {
-  background-color: govuk-colour(black);
+  background-color: govuk-colour("black");
   padding-top: govuk-spacing(2);
 }
 
@@ -38,7 +38,7 @@
 .hmcts-header__link {
   @include govuk-font($size: 24, $weight: bold);
   border-bottom: 1px solid transparent;
-  color: govuk-colour(white);
+  color: govuk-colour("white");
   display: inline-block;
   text-decoration: none;
   line-height: 25px; // Override due to alignment issue in Chrome
@@ -50,16 +50,16 @@
   &:visited,
   &:hover,
   &:active {
-    color: govuk-colour(white);
+    color: govuk-colour("white");
   }
 
   &:hover {
-    border-color: govuk-colour(white);
+    border-color: govuk-colour("white");
   }
 
   &:focus {
     border-color: transparent;
-    color: govuk-colour(black);
+    color: govuk-colour("black");
   }
 
 }
@@ -67,7 +67,7 @@
 
 // Navigation
 .hmcts-header__navigation {
-  color: govuk-colour(white);
+  color: govuk-colour("white");
   margin-top: govuk-spacing(1)-2px;
 }
 
@@ -105,7 +105,7 @@
   }
 
   &:focus {
-    color: govuk-colour(black);
+    color: govuk-colour("black");
   }
 
 }
