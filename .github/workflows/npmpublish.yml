@@ -34,6 +34,7 @@ jobs:
           node-version: 14.15.4
           registry-url: https://registry.npmjs.org/
       - run: |
+          npm install
           npm run build:package
           cd package
           npm publish
