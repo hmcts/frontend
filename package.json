@@ -19,7 +19,6 @@
   "dependencies": {
     "express": "^4.16.3",
     "govuk-frontend": "^3.0.0",
-    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cache": "^0.4.6",
     "gulp-clean": "^0.4.0",
@@ -35,5 +34,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.49-alpha"
+  "version": "0.0.49-alpha",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
