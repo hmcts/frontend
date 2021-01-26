@@ -33,7 +33,10 @@ jobs:
         with:
           node-version: 10
           registry-url: https://registry.npmjs.org/
-      - run: npm publish
+      - run: |
+          npm run build:package
+          cd package
+          npm publish
         if: startsWith(github.ref, 'refs/tags')
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
